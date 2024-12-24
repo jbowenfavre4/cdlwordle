@@ -1,0 +1,2826 @@
+[
+  {
+    "nationality": "United States",
+    "name": "SlasheR",
+    "fullName": "Austin Liddicoat",
+    "team": "ATL",
+    "joined": "2022-08-26",
+    "left": "2023-06-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "Prestinni",
+    "fullName": "Preston Sanderson",
+    "team": "ATL",
+    "joined": "2021-11-09",
+    "left": "2022-08-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Arcitys",
+    "fullName": "Alec Sanderson",
+    "team": "ATL",
+    "joined": "2020-09-15",
+    "left": "2022-08-24"
+  },
+  {
+    "nationality": "United States",
+    "name": "Sib",
+    "fullName": "Daunte Gray",
+    "team": "ATL",
+    "joined": "2020-11-06",
+    "left": "2021-09-20"
+  },
+  {
+    "nationality": "Spain",
+    "name": "JurNii",
+    "fullName": "Juan Antonio González Muñoz",
+    "team": "ATL",
+    "joined": "2020-01-22",
+    "left": "2020-10-22"
+  },
+  {
+    "nationality": "United States",
+    "name": "GRVTY",
+    "fullName": "Thomas Malin",
+    "team": "ATL",
+    "joined": "2020-01-22",
+    "left": "2020-10-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "MajorManiak",
+    "fullName": "Michael Szymaniak",
+    "team": "ATL",
+    "joined": "2019-10-26",
+    "left": "2020-09-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Priestahh",
+    "fullName": "Preston Greiner",
+    "team": "ATL",
+    "joined": "2019-10-26",
+    "left": "2020-09-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "GRVTY",
+    "fullName": "Thomas Malin",
+    "team": "ATL",
+    "joined": "2019-12-05",
+    "left": "2020-01-22"
+  },
+  {
+    "nationality": "Spain",
+    "name": "JurNii",
+    "fullName": "Juan Antonio González Muñoz",
+    "team": "ATL",
+    "joined": "2019-12-05",
+    "left": "2020-01-22"
+  },
+  {
+    "nationality": "United States",
+    "name": "aBeZy",
+    "fullName": "Tyler Pharris",
+    "team": "ATL",
+    "joined": "2019-10-26",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Cellium",
+    "fullName": "McArthur Jovel",
+    "team": "ATL",
+    "joined": "2019-10-26",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Simp",
+    "fullName": "Chris Lehr",
+    "team": "ATL",
+    "joined": "2019-10-26",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Drazah",
+    "fullName": "Zack Jordan",
+    "team": "ATL",
+    "joined": "2023-07-20",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Classic",
+    "fullName": "Nicholas DiCostanzo",
+    "team": "ATL",
+    "joined": "2022-10-25",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "MajorManiak",
+    "fullName": "Michael Szymaniak",
+    "team": "BOS",
+    "joined": "2024-05-24",
+    "left": "2024-07-12"
+  },
+  {
+    "nationality": "England",
+    "name": "Beans",
+    "fullName": "Ben McMellon",
+    "team": "BOS",
+    "joined": "2024-04-02",
+    "left": "2024-07-12"
+  },
+  {
+    "nationality": "United States",
+    "name": "Pentagrxm",
+    "fullName": "Nathaniel Thomas",
+    "team": "BOS",
+    "joined": "2023-12-01",
+    "left": "2024-07-12"
+  },
+  {
+    "nationality": "United States",
+    "name": "Priestahh",
+    "fullName": "Preston Greiner",
+    "team": "BOS",
+    "joined": "2023-07-19",
+    "left": "2024-07-12"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Asim",
+    "fullName": "Obaid Asim",
+    "team": "BOS",
+    "joined": "2024-02-02",
+    "left": "2024-03-31"
+  },
+  {
+    "nationality": "United States",
+    "name": "SlasheR",
+    "fullName": "Austin Liddicoat",
+    "team": "BOS",
+    "joined": "2023-07-19",
+    "left": "2024-03-31"
+  },
+  {
+    "nationality": "United States",
+    "name": "Capsidal",
+    "fullName": "Kenyen Sutton",
+    "team": "BOS",
+    "joined": "2023-07-29",
+    "left": "2024-02-02"
+  },
+  {
+    "nationality": "England",
+    "name": "Beans",
+    "fullName": "Ben McMellon",
+    "team": "BOS",
+    "joined": "2022-09-22",
+    "left": "2023-11-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Kremp",
+    "fullName": "Kyle Haworth",
+    "team": "BOS",
+    "joined": "2023-04-03",
+    "left": "2023-07-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "Owakening",
+    "fullName": "Joseph Conley",
+    "team": "BOS",
+    "joined": "2022-09-20",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Vivid",
+    "fullName": "Reece Drost",
+    "team": "BOS",
+    "joined": "2022-06-21",
+    "left": "2023-06-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Nero",
+    "fullName": "Dylan Koch",
+    "team": "BOS",
+    "joined": "2022-01-13",
+    "left": "2023-06-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Methodz",
+    "fullName": "Anthony Zinni",
+    "team": "BOS",
+    "joined": "2022-01-13",
+    "left": "2023-02-05"
+  },
+  {
+    "nationality": "United States",
+    "name": "Capsidal",
+    "fullName": "Kenyen Sutton",
+    "team": "BOS",
+    "joined": "2022-01-13",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "TJHaLy",
+    "fullName": "Thomas Haly",
+    "team": "BOS",
+    "joined": "2022-01-13",
+    "left": "2022-08-12"
+  },
+  {
+    "nationality": "Mexico",
+    "name": "Snoopy",
+    "fullName": "Eric Pérez",
+    "team": "BOS",
+    "joined": "2023-06-02",
+    "left": ""
+  },
+  {
+    "nationality": "Scotland",
+    "name": "Cammy",
+    "fullName": "Cameron McKilligan",
+    "team": "BOS",
+    "joined": "2024-07-22",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Owakening",
+    "fullName": "Joseph Conley",
+    "team": "BOS",
+    "joined": "2024-07-22",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Purj",
+    "fullName": "Evan Perez",
+    "team": "BOS",
+    "joined": "2024-07-22",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "FeLo",
+    "fullName": "Tyler Johnson",
+    "team": "CAR",
+    "joined": "2024-01-18",
+    "left": "2024-10-02"
+  },
+  {
+    "nationality": "England",
+    "name": "Beans",
+    "fullName": "Ben McMellon",
+    "team": "CAR",
+    "joined": "2024-07-22",
+    "left": "2024-08-19"
+  },
+  {
+    "nationality": "United States",
+    "name": "TJHaLy",
+    "fullName": "Thomas Haly",
+    "team": "CAR",
+    "joined": "2024-02-15",
+    "left": "2024-08-19"
+  },
+  {
+    "nationality": "United States",
+    "name": "Clayster",
+    "fullName": "James Eubanks",
+    "team": "CAR",
+    "joined": "2023-11-09",
+    "left": "2024-07-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "TJHaLy",
+    "fullName": "Thomas Haly",
+    "team": "CAR",
+    "joined": "2024-01-12",
+    "left": "2024-02-15"
+  },
+  {
+    "nationality": "Spain",
+    "name": "ReeaL",
+    "fullName": "José Manuel Fernández",
+    "team": "CAR",
+    "joined": "2023-11-09",
+    "left": "2024-02-03"
+  },
+  {
+    "nationality": "United States",
+    "name": "GodRx",
+    "fullName": "Adam Brown",
+    "team": "CAR",
+    "joined": "2023-11-09",
+    "left": "2024-01-18"
+  },
+  {
+    "nationality": "United States",
+    "name": "Gwinn",
+    "fullName": "Isaiah Gwinn",
+    "team": "CAR",
+    "joined": "2023-11-09",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "SlasheR",
+    "fullName": "Austin Liddicoat",
+    "team": "CAR",
+    "joined": "2024-10-23",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "TJHaLy",
+    "fullName": "Thomas Haly",
+    "team": "CAR",
+    "joined": "2024-10-23",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Vivid",
+    "fullName": "Reece Drost",
+    "team": "CAR",
+    "joined": "2024-10-23",
+    "left": ""
+  },
+  {
+    "nationality": "Saudi Arabia",
+    "name": "Exnid",
+    "fullName": "Saud Alotai",
+    "team": "LV",
+    "joined": "2024-08-21",
+    "left": ""
+  },
+  {
+    "nationality": "Saudi Arabia",
+    "name": "Khhx",
+    "fullName": "Khalid Almadhi",
+    "team": "LV",
+    "joined": "2024-08-21",
+    "left": ""
+  },
+  {
+    "nationality": "Saudi Arabia",
+    "name": "KingAbody",
+    "fullName": "Abdulelah Alrajhi",
+    "team": "LV",
+    "joined": "2024-08-21",
+    "left": ""
+  },
+  {
+    "nationality": "Saudi Arabia",
+    "name": "Roxas",
+    "fullName": "Salman Alkhuzayyim",
+    "team": "LV",
+    "joined": "2024-08-21",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "KiSMET",
+    "fullName": "Matthew Tinsley",
+    "team": "LAGM",
+    "joined": "2024-12-04",
+    "left": ""
+  },
+  {
+    "nationality": "France",
+    "name": "Lynz",
+    "fullName": "Thomas Gregorio",
+    "team": "LAGM",
+    "joined": "2024-12-04",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Priestahh",
+    "fullName": "Preston Greiner",
+    "team": "LAGM",
+    "joined": "2024-12-04",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Skyz",
+    "fullName": "Cesar Bueno",
+    "team": "LAGM",
+    "joined": "2024-12-04",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "JoeDeceives",
+    "fullName": "Joseph Romero",
+    "team": "LAT",
+    "joined": "2023-09-01",
+    "left": "2024-10-16"
+  },
+  {
+    "nationality": "United States",
+    "name": "Kremp",
+    "fullName": "Kyle Haworth",
+    "team": "LAT",
+    "joined": "2024-02-02",
+    "left": "2024-09-25"
+  },
+  {
+    "nationality": "England",
+    "name": "Nastie",
+    "fullName": "Byron Plumridge",
+    "team": "LAT",
+    "joined": "2024-02-02",
+    "left": "2024-09-25"
+  },
+  {
+    "nationality": "England",
+    "name": "Afro",
+    "fullName": "Marcus Reid",
+    "team": "LAT",
+    "joined": "2023-09-01",
+    "left": "2024-08-06"
+  },
+  {
+    "nationality": "Scotland",
+    "name": "Cammy",
+    "fullName": "Cameron McKilligan",
+    "team": "LAT",
+    "joined": "2023-09-01",
+    "left": "2024-02-02"
+  },
+  {
+    "nationality": "United States",
+    "name": "Kenny",
+    "fullName": "Kenneth Williams",
+    "team": "LAT",
+    "joined": "2020-11-06",
+    "left": "2023-07-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "Drazah",
+    "fullName": "Zack Jordan",
+    "team": "LAT",
+    "joined": "2020-11-06",
+    "left": "2023-07-13"
+  },
+  {
+    "nationality": "United States",
+    "name": "Envoy",
+    "fullName": "Dylan Hannon",
+    "team": "LAT",
+    "joined": "2021-09-10",
+    "left": "2023-07-12"
+  },
+  {
+    "nationality": "United States",
+    "name": "Octane",
+    "fullName": "Sam Larew",
+    "team": "LAT",
+    "joined": "2021-09-09",
+    "left": "2023-06-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Capsidal",
+    "fullName": "Kenyen Sutton",
+    "team": "LAT",
+    "joined": "2023-01-19",
+    "left": "2023-02-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Pentagrxm",
+    "fullName": "Nathaniel Thomas",
+    "team": "LAT",
+    "joined": "2022-01-18",
+    "left": "2022-08-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "Huke",
+    "fullName": "Cuyler Garland",
+    "team": "LAT",
+    "joined": "2021-05-04",
+    "left": "2021-09-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "John",
+    "fullName": "Johnathan Perez",
+    "team": "LAT",
+    "joined": "2021-06-24",
+    "left": "2021-09-01"
+  },
+  {
+    "nationality": "United States",
+    "name": "Venom",
+    "fullName": "Carlos Hernandez",
+    "team": "LAT",
+    "joined": "2021-03-22",
+    "left": "2021-09-01"
+  },
+  {
+    "nationality": "United States",
+    "name": "SlasheR",
+    "fullName": "Austin Liddicoat",
+    "team": "LAT",
+    "joined": "2020-11-06",
+    "left": "2021-09-01"
+  },
+  {
+    "nationality": "United States",
+    "name": "TJHaLy",
+    "fullName": "Thomas Haly",
+    "team": "LAT",
+    "joined": "2020-11-06",
+    "left": "2021-08-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "Temp",
+    "fullName": "Donovan Laroda",
+    "team": "LAT",
+    "joined": "2020-12-11",
+    "left": "2021-04-13"
+  },
+  {
+    "nationality": "United States",
+    "name": "Ghosty",
+    "fullName": "Daniel Rothe",
+    "team": "LAT",
+    "joined": "2023-09-01",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Envoy",
+    "fullName": "Dylan Hannon",
+    "team": "LAT",
+    "joined": "2024-09-26",
+    "left": ""
+  },
+  {
+    "nationality": "France",
+    "name": "HyDra",
+    "fullName": "Paco Rusiewiez",
+    "team": "LAT",
+    "joined": "2024-09-26",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Scrappy",
+    "fullName": "Thomas Ernst",
+    "team": "LAT",
+    "joined": "2024-09-26",
+    "left": ""
+  },
+  {
+    "nationality": "Spain",
+    "name": "Vikul",
+    "fullName": "Javier Milagro",
+    "team": "MIA",
+    "joined": "2023-08-24",
+    "left": "2024-12-01"
+  },
+  {
+    "nationality": "Spain",
+    "name": "EriKBooM",
+    "fullName": "Eric Ferrer",
+    "team": "MIA",
+    "joined": "2023-08-24",
+    "left": "2024-07-31"
+  },
+  {
+    "nationality": "United States",
+    "name": "Purj",
+    "fullName": "Evan Perez",
+    "team": "MIA",
+    "joined": "2024-05-29",
+    "left": "2024-06-01"
+  },
+  {
+    "nationality": "Spain",
+    "name": "JurNii",
+    "fullName": "Juan Antonio González Muñoz",
+    "team": "MIA",
+    "joined": "2023-08-24",
+    "left": "2024-03-25"
+  },
+  {
+    "nationality": "Spain",
+    "name": "Lucky",
+    "fullName": "Alejandro López",
+    "team": "MIA",
+    "joined": "2023-08-24",
+    "left": ""
+  },
+  {
+    "nationality": "Spain",
+    "name": "MettalZ",
+    "fullName": "Adrian Serrano",
+    "team": "MIA",
+    "joined": "2023-08-24",
+    "left": ""
+  },
+  {
+    "nationality": "Spain",
+    "name": "ReeaL",
+    "fullName": "José Manuel Fernández",
+    "team": "MIA",
+    "joined": "2024-02-20",
+    "left": ""
+  },
+  {
+    "nationality": "Spain",
+    "name": "RenKoR",
+    "fullName": "David Isern",
+    "team": "MIA",
+    "joined": "2024-08-23",
+    "left": ""
+  },
+  {
+    "nationality": "Spain",
+    "name": "SupeR",
+    "fullName": "Diego Escudero",
+    "team": "MIA",
+    "joined": "2024-12-02",
+    "left": ""
+  },
+  {
+    "nationality": "France",
+    "name": "Lynz",
+    "fullName": "Thomas Gregorio",
+    "team": "MIN",
+    "joined": "2023-08-31",
+    "left": "2024-10-28"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Diamondcon",
+    "fullName": "Conor Johst",
+    "team": "MIN",
+    "joined": "2024-07-23",
+    "left": "2024-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Estreal",
+    "fullName": "Justice McMillan",
+    "team": "MIN",
+    "joined": "2024-07-23",
+    "left": "2024-08-20"
+  },
+  {
+    "nationality": "United States",
+    "name": "Accuracy",
+    "fullName": "Lamar Abedi",
+    "team": "MIN",
+    "joined": "2023-08-31",
+    "left": "2024-08-19"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Gunless",
+    "fullName": "Peirce Hillman",
+    "team": "MIN",
+    "joined": "2024-04-11",
+    "left": "2024-07-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Standy",
+    "fullName": "Eli Bentz",
+    "team": "MIN",
+    "joined": "2024-04-11",
+    "left": "2024-07-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Spart",
+    "fullName": "Kris Cervantez",
+    "team": "MIN",
+    "joined": "2024-06-11",
+    "left": "2024-06-18"
+  },
+  {
+    "nationality": "United States",
+    "name": "Owakening",
+    "fullName": "Joseph Conley",
+    "team": "MIN",
+    "joined": "2023-08-31",
+    "left": "2024-05-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Vivid",
+    "fullName": "Reece Drost",
+    "team": "MIN",
+    "joined": "2023-08-31",
+    "left": "2024-04-01"
+  },
+  {
+    "nationality": "England",
+    "name": "Afro",
+    "fullName": "Marcus Reid",
+    "team": "MIN",
+    "joined": "2022-08-25",
+    "left": "2023-06-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Attach",
+    "fullName": "Dillon Price",
+    "team": "MIN",
+    "joined": "2022-08-25",
+    "left": "2023-06-25"
+  },
+  {
+    "nationality": "England",
+    "name": "Bance",
+    "fullName": "Ben Bance",
+    "team": "MIN",
+    "joined": "2022-08-25",
+    "left": "2023-06-25"
+  },
+  {
+    "nationality": "Scotland",
+    "name": "Cammy",
+    "fullName": "Cameron McKilligan",
+    "team": "MIN",
+    "joined": "2022-08-25",
+    "left": "2023-06-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Fame",
+    "fullName": "Kevin Bonanno",
+    "team": "MIN",
+    "joined": "2022-07-14",
+    "left": "2023-06-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Havok",
+    "fullName": "Colt McLendon",
+    "team": "MIN",
+    "joined": "2022-04-27",
+    "left": "2022-08-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Standy",
+    "fullName": "Eli Bentz",
+    "team": "MIN",
+    "joined": "2021-03-22",
+    "left": "2022-08-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Attach",
+    "fullName": "Dillon Price",
+    "team": "MIN",
+    "joined": "2020-09-15",
+    "left": "2022-08-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Priestahh",
+    "fullName": "Preston Greiner",
+    "team": "MIN",
+    "joined": "2020-09-15",
+    "left": "2022-08-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "MajorManiak",
+    "fullName": "Michael Szymaniak",
+    "team": "MIN",
+    "joined": "2020-09-15",
+    "left": "2022-06-22"
+  },
+  {
+    "nationality": "United States",
+    "name": "Saintt",
+    "fullName": "Brian Baroska",
+    "team": "MIN",
+    "joined": "2021-01-13",
+    "left": "2021-09-01"
+  },
+  {
+    "nationality": "United States",
+    "name": "Accuracy",
+    "fullName": "Lamar Abedi",
+    "team": "MIN",
+    "joined": "2020-09-15",
+    "left": "2021-09-01"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Asim",
+    "fullName": "Obaid Asim",
+    "team": "MIN",
+    "joined": "2019-10-24",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Exceed",
+    "fullName": "Kaden Stockdale",
+    "team": "MIN",
+    "joined": "2019-10-24",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "TTinyy",
+    "fullName": "Devin Robinson",
+    "team": "MIN",
+    "joined": "2019-10-24",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "England",
+    "name": "Alexx",
+    "fullName": "Alex Carpenter",
+    "team": "MIN",
+    "joined": "2019-10-10",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Assault",
+    "fullName": "Adam Garcia",
+    "team": "MIN",
+    "joined": "2019-09-20",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "GodRx",
+    "fullName": "Adam Brown",
+    "team": "MIN",
+    "joined": "2019-09-20",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "SiLLY",
+    "fullName": "Justin Fargo-Palmer",
+    "team": "MIN",
+    "joined": "2019-09-20",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Estreal",
+    "fullName": "Justice McMillan",
+    "team": "MIN",
+    "joined": "2024-11-06",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Gio",
+    "fullName": "Giovanni Webster",
+    "team": "MIN",
+    "joined": "2024-11-06",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Nero",
+    "fullName": "Dylan Koch",
+    "team": "MIN",
+    "joined": "2024-11-06",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "PaulEhx",
+    "fullName": "Paul Avila",
+    "team": "MIN",
+    "joined": "2024-11-06",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "KiSMET",
+    "fullName": "Matthew Tinsley",
+    "team": "C9NY",
+    "joined": "2024-08-10",
+    "left": "2024-09-30"
+  },
+  {
+    "nationality": "United States",
+    "name": "Skyz",
+    "fullName": "Cesar Bueno",
+    "team": "C9NY",
+    "joined": "2024-08-10",
+    "left": "2024-09-30"
+  },
+  {
+    "nationality": "France",
+    "name": "HyDra",
+    "fullName": "Paco Rusiewiez",
+    "team": "C9NY",
+    "joined": "2024-08-10",
+    "left": "2024-09-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Sib",
+    "fullName": "Daunte Gray",
+    "team": "C9NY",
+    "joined": "2024-08-10",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Attach",
+    "fullName": "Dillon Price",
+    "team": "C9NY",
+    "joined": "2024-10-24",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Kremp",
+    "fullName": "Kyle Haworth",
+    "team": "C9NY",
+    "joined": "2024-10-24",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Mack",
+    "fullName": "Makenzie Kelley",
+    "team": "C9NY",
+    "joined": "2024-10-24",
+    "left": ""
+  },
+  {
+    "nationality": "Canada",
+    "name": "iLLeY",
+    "fullName": "Indervir Dhaliwal",
+    "team": "TEX",
+    "joined": "2022-08-18",
+    "left": "2023-10-16"
+  },
+  {
+    "nationality": "United States",
+    "name": "Ghosty",
+    "fullName": "Daniel Rothe",
+    "team": "TEX",
+    "joined": "2023-02-09",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Huke",
+    "fullName": "Cuyler Garland",
+    "team": "TEX",
+    "joined": "2023-01-08",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Scump",
+    "fullName": "Seth Abner",
+    "team": "TEX",
+    "joined": "2021-11-08",
+    "left": "2023-01-17"
+  },
+  {
+    "nationality": "Canada",
+    "name": "iLLeY",
+    "fullName": "Indervir Dhaliwal",
+    "team": "TEX",
+    "joined": "2021-11-08",
+    "left": "2022-08-17"
+  },
+  {
+    "nationality": "United States",
+    "name": "Prolute",
+    "fullName": "Byron Vera",
+    "team": "TEX",
+    "joined": "2022-05-11",
+    "left": "2022-08-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "General",
+    "fullName": "Jordon General",
+    "team": "TEX",
+    "joined": "2021-11-08",
+    "left": "2022-08-14"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Dashy",
+    "fullName": "Brandon Otell",
+    "team": "TEX",
+    "joined": "2021-11-08",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Shotzzy",
+    "fullName": "Anthony Cuevas-Castro",
+    "team": "TEX",
+    "joined": "2021-11-08",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Kenny",
+    "fullName": "Kenneth Williams",
+    "team": "TEX",
+    "joined": "2023-07-30",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Huke",
+    "fullName": "Cuyler Garland",
+    "team": "TEX",
+    "joined": "2024-12-12",
+    "left": ""
+  },
+  {
+    "nationality": "Australia",
+    "name": "Pred",
+    "fullName": "Amer Zulbeari",
+    "team": "TEX",
+    "joined": "2023-07-30",
+    "left": "2024-12-12"
+  },
+  {
+    "nationality": "United States",
+    "name": "Envoy",
+    "fullName": "Dylan Hannon",
+    "team": "TOR",
+    "joined": "2023-07-19",
+    "left": "2024-09-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Scrappy",
+    "fullName": "Thomas Ernst",
+    "team": "TOR",
+    "joined": "2022-04-10",
+    "left": "2024-09-25"
+  },
+  {
+    "nationality": "England",
+    "name": "Hicksy",
+    "fullName": "Charlie Hicks",
+    "team": "TOR",
+    "joined": "2021-10-19",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Standy",
+    "fullName": "Eli Bentz",
+    "team": "TOR",
+    "joined": "2022-09-09",
+    "left": "2023-03-21"
+  },
+  {
+    "nationality": "Scotland",
+    "name": "Cammy",
+    "fullName": "Cameron McKilligan",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2022-08-25"
+  },
+  {
+    "nationality": "England",
+    "name": "Bance",
+    "fullName": "Ben Bance",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2022-08-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "Methodz",
+    "fullName": "Anthony Zinni",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2021-11-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Brack",
+    "fullName": "Carson Newberry",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "United States",
+    "name": "Classic",
+    "fullName": "Nicholas DiCostanzo",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "United States",
+    "name": "Loony",
+    "fullName": "Daniel Loza",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "Spain",
+    "name": "Lucky",
+    "fullName": "Alejandro López",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Mayhem",
+    "fullName": "Mehran Anjomshoa",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "Spain",
+    "name": "MettalZ",
+    "fullName": "Adrian Serrano",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "Denmark",
+    "name": "CleanX",
+    "fullName": "Tobias Juul Jønsson",
+    "team": "TOR",
+    "joined": "2019-10-24",
+    "left": ""
+  },
+  {
+    "nationality": "England",
+    "name": "Insight",
+    "fullName": "Jamie Craven",
+    "team": "TOR",
+    "joined": "2020-10-17",
+    "left": ""
+  },
+  {
+    "nationality": "England",
+    "name": "Beans",
+    "fullName": "Ben McMellon",
+    "team": "TOR",
+    "joined": "2024-10-16",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "JoeDeceives",
+    "fullName": "Joseph Romero",
+    "team": "TOR",
+    "joined": "2024-10-16",
+    "left": ""
+  },
+  {
+    "nationality": "France",
+    "name": "Breszy",
+    "fullName": "Paul Breszynski",
+    "team": "VAN",
+    "joined": "2024-08-11",
+    "left": "2024-08-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "Huke",
+    "fullName": "Cuyler Garland",
+    "team": "VAN",
+    "joined": "2024-08-11",
+    "left": "2024-08-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "04",
+    "fullName": "Jovan Rodriguez",
+    "team": "VAN",
+    "joined": "2024-08-11",
+    "left": ""
+  },
+  {
+    "nationality": "Belgium",
+    "name": "Abuzah",
+    "fullName": "Jordan François",
+    "team": "VAN",
+    "joined": "2024-08-11",
+    "left": ""
+  },
+  {
+    "nationality": "England",
+    "name": "Hicksy",
+    "fullName": "Charlie Hicks",
+    "team": "VAN",
+    "joined": "2024-10-31",
+    "left": ""
+  },
+  {
+    "nationality": "England",
+    "name": "Nastie",
+    "fullName": "Byron Plumridge",
+    "team": "VAN",
+    "joined": "2024-10-31",
+    "left": ""
+  },
+  {
+    "nationality": "United States",
+    "name": "Drazah",
+    "fullName": "Zack Jordan",
+    "team": "OGLA",
+    "joined": "2020-07-10",
+    "left": "2020-11-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "Kenny",
+    "fullName": "Kenneth Williams",
+    "team": "OGLA",
+    "joined": "2019-10-24",
+    "left": "2020-11-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "SlasheR",
+    "fullName": "Austin Liddicoat",
+    "team": "OGLA",
+    "joined": "2019-10-24",
+    "left": "2020-11-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "TJHaLy",
+    "fullName": "Thomas Haly",
+    "team": "OGLA",
+    "joined": "2019-10-24",
+    "left": "2020-11-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "Hollow",
+    "fullName": "Darien Chverchko",
+    "team": "OGLA",
+    "joined": "2020-07-10",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Cheen",
+    "fullName": "Martin Chino",
+    "team": "OGLA",
+    "joined": "2019-12-11",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Goonjar",
+    "fullName": "Jevon Gooljar-Lim",
+    "team": "OGLA",
+    "joined": "2019-12-11",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Dashy",
+    "fullName": "Brandon Otell",
+    "team": "OGLA",
+    "joined": "2019-10-24",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "JKap",
+    "fullName": "Jordan Kaplan",
+    "team": "OGLA",
+    "joined": "2019-10-24",
+    "left": "2020-09-02"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Dashy",
+    "fullName": "Brandon Otell",
+    "team": "CHH",
+    "joined": "2020-09-14",
+    "left": "2020-11-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "Sender",
+    "fullName": "Troy Michaels",
+    "team": "CHH",
+    "joined": "2020-01-13",
+    "left": "2020-11-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "MBoZe",
+    "fullName": "Marcus Blanks Jr.",
+    "team": "CHH",
+    "joined": "2019-12-24",
+    "left": "2020-11-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "General",
+    "fullName": "Jordon General",
+    "team": "CHH",
+    "joined": "2019-12-06",
+    "left": "2020-11-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "Envoy",
+    "fullName": "Dylan Hannon",
+    "team": "CHH",
+    "joined": "2019-10-24",
+    "left": "2020-11-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "FormaL",
+    "fullName": "Matthew Piper",
+    "team": "CHH",
+    "joined": "2019-10-24",
+    "left": "2020-11-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "Scump",
+    "fullName": "Seth Abner",
+    "team": "CHH",
+    "joined": "2019-10-24",
+    "left": "2020-11-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "Prestinni",
+    "fullName": "Preston Sanderson",
+    "team": "CHH",
+    "joined": "2020-05-18",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Arcitys",
+    "fullName": "Alec Sanderson",
+    "team": "CHH",
+    "joined": "2019-10-24",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Gunless",
+    "fullName": "Peirce Hillman",
+    "team": "CHH",
+    "joined": "2019-10-24",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Dashy",
+    "fullName": "Brandon Otell",
+    "team": "CHI",
+    "joined": "2020-11-11",
+    "left": "2021-11-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "General",
+    "fullName": "Jordon General",
+    "team": "CHI",
+    "joined": "2020-11-11",
+    "left": "2021-11-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Scump",
+    "fullName": "Seth Abner",
+    "team": "CHI",
+    "joined": "2020-11-11",
+    "left": "2021-11-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Envoy",
+    "fullName": "Dylan Hannon",
+    "team": "CHI",
+    "joined": "2020-11-11",
+    "left": "2021-08-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "FormaL",
+    "fullName": "Matthew Piper",
+    "team": "CHI",
+    "joined": "2020-11-11",
+    "left": "2021-08-28"
+  },
+  {
+    "nationality": "Canada",
+    "name": "iLLeY",
+    "fullName": "Indervir Dhaliwal",
+    "team": "DAL",
+    "joined": "2019-10-17",
+    "left": "2021-11-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Shotzzy",
+    "fullName": "Anthony Cuevas-Castro",
+    "team": "DAL",
+    "joined": "2019-10-15",
+    "left": "2021-11-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "C6",
+    "fullName": "Ian Porter",
+    "team": "DAL",
+    "joined": "2019-10-18",
+    "left": "2021-10-22"
+  },
+  {
+    "nationality": "United States",
+    "name": "Vivid",
+    "fullName": "Reece Drost",
+    "team": "DAL",
+    "joined": "2021-05-21",
+    "left": "2021-10-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "FeLo",
+    "fullName": "Tyler Johnson",
+    "team": "DAL",
+    "joined": "2021-01-19",
+    "left": "2021-10-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Huke",
+    "fullName": "Cuyler Garland",
+    "team": "DAL",
+    "joined": "2019-10-16",
+    "left": "2021-05-04"
+  },
+  {
+    "nationality": "United States",
+    "name": "Tisch",
+    "fullName": "Paul Tischler",
+    "team": "DAL",
+    "joined": "2019-12-12",
+    "left": "2020-10-16"
+  },
+  {
+    "nationality": "United States",
+    "name": "Clayster",
+    "fullName": "James Eubanks",
+    "team": "DAL",
+    "joined": "2019-10-14",
+    "left": "2020-09-18"
+  },
+  {
+    "nationality": "England",
+    "name": "Tommey",
+    "fullName": "Thomas Trewren",
+    "team": "DAL",
+    "joined": "2019-11-04",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Canada",
+    "name": "MuTeX",
+    "fullName": "Charlie Saouma",
+    "team": "DAL",
+    "joined": "2019-11-05",
+    "left": "2019-11-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Temp",
+    "fullName": "Donovan Laroda",
+    "team": "PAR",
+    "joined": "2021-11-10",
+    "left": "2022-09-12"
+  },
+  {
+    "nationality": "United States",
+    "name": "oJohnny",
+    "fullName": "Giancarlos Carrasco",
+    "team": "PAR",
+    "joined": "2022-06-23",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Jimbo",
+    "fullName": "Bryan Sabman",
+    "team": "PAR",
+    "joined": "2022-03-10",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "John",
+    "fullName": "Johnathan Perez",
+    "team": "PAR",
+    "joined": "2021-11-10",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "GRVTY",
+    "fullName": "Thomas Malin",
+    "team": "PAR",
+    "joined": "2022-03-01",
+    "left": "2022-08-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "FeLo",
+    "fullName": "Tyler Johnson",
+    "team": "PAR",
+    "joined": "2021-11-10",
+    "left": "2022-03-09"
+  },
+  {
+    "nationality": "United States",
+    "name": "Decemate",
+    "fullName": "Jacob Cato",
+    "team": "PAR",
+    "joined": "2021-11-10",
+    "left": "2022-02-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "Theory",
+    "fullName": "Dylan McGee",
+    "team": "PAR",
+    "joined": "2021-01-13",
+    "left": "2021-09-03"
+  },
+  {
+    "nationality": "United States",
+    "name": "Zaptius",
+    "fullName": "Alex Bonilla",
+    "team": "PAR",
+    "joined": "2021-05-25",
+    "left": "2021-08-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Temp",
+    "fullName": "Donovan Laroda",
+    "team": "PAR",
+    "joined": "2021-04-13",
+    "left": "2021-08-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "AquA",
+    "fullName": "Ulysses Silva",
+    "team": "PAR",
+    "joined": "2020-12-31",
+    "left": "2021-08-27"
+  },
+  {
+    "nationality": "England",
+    "name": "Skrapz",
+    "fullName": "Matthew Marshall",
+    "team": "PAR",
+    "joined": "2020-12-31",
+    "left": "2021-08-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Classic",
+    "fullName": "Nicholas DiCostanzo",
+    "team": "PAR",
+    "joined": "2020-12-31",
+    "left": "2021-05-24"
+  },
+  {
+    "nationality": "United States",
+    "name": "Fire",
+    "fullName": "Luis Rivera",
+    "team": "PAR",
+    "joined": "2020-12-31",
+    "left": "2021-04-13"
+  },
+  {
+    "nationality": "France",
+    "name": "Breszy",
+    "fullName": "Paul Breszynski",
+    "team": "PAR",
+    "joined": "2019-10-03",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Australia",
+    "name": "Denz",
+    "fullName": "Denholm Taylor",
+    "team": "PAR",
+    "joined": "2019-10-03",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Australia",
+    "name": "Louqa",
+    "fullName": "Luke Rigas",
+    "team": "PAR",
+    "joined": "2019-10-03",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Phantomz",
+    "fullName": "Timothy Landis",
+    "team": "PAR",
+    "joined": "2019-10-03",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Australia",
+    "name": "Shockz",
+    "fullName": "Conrad Rymarek",
+    "team": "PAR",
+    "joined": "2019-10-03",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "England",
+    "name": "Zed",
+    "fullName": "Zach Denyer",
+    "team": "PAR",
+    "joined": "2019-10-03",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "KiSMET",
+    "fullName": "Matthew Tinsley",
+    "team": "PAR",
+    "joined": "2019-10-03",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "Spain",
+    "name": "Vikul",
+    "fullName": "Javier Milagro",
+    "team": "FLA",
+    "joined": "2023-06-30",
+    "left": "2023-08-24"
+  },
+  {
+    "nationality": "Spain",
+    "name": "Vikul",
+    "fullName": "Javier Milagro",
+    "team": "FLA",
+    "joined": "2022-09-19",
+    "left": "2023-06-30"
+  },
+  {
+    "nationality": "United States",
+    "name": "Capsidal",
+    "fullName": "Kenyen Sutton",
+    "team": "FLA",
+    "joined": "2023-02-15",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "FeLo",
+    "fullName": "Tyler Johnson",
+    "team": "FLA",
+    "joined": "2023-02-14",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Brack",
+    "fullName": "Carson Newberry",
+    "team": "FLA",
+    "joined": "2022-09-19",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Havok",
+    "fullName": "Colt McLendon",
+    "team": "FLA",
+    "joined": "2022-09-19",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Davpadie",
+    "fullName": "David Maslowski",
+    "team": "FLA",
+    "joined": "2021-10-06",
+    "left": "2023-02-12"
+  },
+  {
+    "nationality": "United States",
+    "name": "MajorManiak",
+    "fullName": "Michael Szymaniak",
+    "team": "FLA",
+    "joined": "2022-09-19",
+    "left": "2023-02-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "2ReaL",
+    "fullName": "Brendan Stockdale",
+    "team": "FLA",
+    "joined": "2022-06-23",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "MajorManiak",
+    "fullName": "Michael Szymaniak",
+    "team": "FLA",
+    "joined": "2022-06-22",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Yeez",
+    "fullName": "Christian Faircloth",
+    "team": "FLA",
+    "joined": "2021-07-26",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Owakening",
+    "fullName": "Joseph Conley",
+    "team": "FLA",
+    "joined": "2020-05-22",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Skyz",
+    "fullName": "Cesar Bueno",
+    "team": "FLA",
+    "joined": "2019-12-02",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Vivid",
+    "fullName": "Reece Drost",
+    "team": "FLA",
+    "joined": "2021-11-04",
+    "left": "2022-06-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "Havok",
+    "fullName": "Colt McLendon",
+    "team": "FLA",
+    "joined": "2019-12-02",
+    "left": "2021-11-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "Neptune",
+    "fullName": "Travis McCloud",
+    "team": "FLA",
+    "joined": "2021-01-10",
+    "left": "2021-10-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "Atura",
+    "fullName": "Ricky Lugo",
+    "team": "FLA",
+    "joined": "2020-01-13",
+    "left": "2021-09-03"
+  },
+  {
+    "nationality": "United States",
+    "name": "Slacked",
+    "fullName": "Josiah Berry",
+    "team": "FLA",
+    "joined": "2020-12-07",
+    "left": "2021-07-20"
+  },
+  {
+    "nationality": "United States",
+    "name": "Fero",
+    "fullName": "Maurice Henriquez",
+    "team": "FLA",
+    "joined": "2020-03-06",
+    "left": "2020-11-10"
+  },
+  {
+    "nationality": "United States",
+    "name": "Frosty",
+    "fullName": "Bradley Bergstrom",
+    "team": "FLA",
+    "joined": "2019-12-02",
+    "left": "2020-09-09"
+  },
+  {
+    "nationality": "United States",
+    "name": "Maux",
+    "fullName": "Chance Moncivaez",
+    "team": "FLA",
+    "joined": "2019-12-02",
+    "left": "2020-09-09"
+  },
+  {
+    "nationality": "United States",
+    "name": "MaNiaC",
+    "fullName": "Nick Kershner",
+    "team": "FLA",
+    "joined": "2019-12-11",
+    "left": "2020-07-24"
+  },
+  {
+    "nationality": "United States",
+    "name": "Prestinni",
+    "fullName": "Preston Sanderson",
+    "team": "FLA",
+    "joined": "2019-12-02",
+    "left": "2020-05-18"
+  },
+  {
+    "nationality": "England",
+    "name": "Skrapz",
+    "fullName": "Matthew Marshall",
+    "team": "LDN",
+    "joined": "2022-10-27",
+    "left": "2023-06-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "Ulisses",
+    "fullName": "Ulisses Rios",
+    "team": "LDN",
+    "joined": "2023-03-24",
+    "left": "2023-06-27"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Asim",
+    "fullName": "Obaid Asim",
+    "team": "LDN",
+    "joined": "2022-10-27",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "England",
+    "name": "Nastie",
+    "fullName": "Byron Plumridge",
+    "team": "LDN",
+    "joined": "2021-11-16",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "PaulEhx",
+    "fullName": "Paul Avila",
+    "team": "LDN",
+    "joined": "2022-10-27",
+    "left": "2023-03-17"
+  },
+  {
+    "nationality": "England",
+    "name": "Zer0",
+    "fullName": "Trei Morris",
+    "team": "LDN",
+    "joined": "2021-11-16",
+    "left": "2023-03-17"
+  },
+  {
+    "nationality": "England",
+    "name": "Gismo",
+    "fullName": "Joey Owen",
+    "team": "LDN",
+    "joined": "2021-11-16",
+    "left": "2022-10-10"
+  },
+  {
+    "nationality": "England",
+    "name": "Afro",
+    "fullName": "Marcus Reid",
+    "team": "LDN",
+    "joined": "2021-01-22",
+    "left": "2022-08-24"
+  },
+  {
+    "nationality": "England",
+    "name": "Harry",
+    "fullName": "Harry Payne",
+    "team": "LDN",
+    "joined": "2022-01-19",
+    "left": "2022-08-22"
+  },
+  {
+    "nationality": "United States",
+    "name": "PaulEhx",
+    "fullName": "Paul Avila",
+    "team": "LDN",
+    "joined": "2022-03-09",
+    "left": "2022-03-12"
+  },
+  {
+    "nationality": "United States",
+    "name": "PaulEhx",
+    "fullName": "Paul Avila",
+    "team": "LDN",
+    "joined": "2021-03-16",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "England",
+    "name": "Zed",
+    "fullName": "Zach Denyer",
+    "team": "LDN",
+    "joined": "2021-03-03",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "England",
+    "name": "Alexx",
+    "fullName": "Alex Carpenter",
+    "team": "LDN",
+    "joined": "2020-10-29",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "Scotland",
+    "name": "Seany",
+    "fullName": "Sean O'Connor",
+    "team": "LDN",
+    "joined": "2019-11-03",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "United States",
+    "name": "Zaptius",
+    "fullName": "Alex Bonilla",
+    "team": "LDN",
+    "joined": "2021-04-19",
+    "left": "2021-05-18"
+  },
+  {
+    "nationality": "Northern Ireland",
+    "name": "Dylan",
+    "fullName": "Thomas Henderson",
+    "team": "LDN",
+    "joined": "2020-10-29",
+    "left": "2021-04-19"
+  },
+  {
+    "nationality": "England",
+    "name": "Zer0",
+    "fullName": "Trei Morris",
+    "team": "LDN",
+    "joined": "2020-10-29",
+    "left": "2021-04-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "Parasite",
+    "fullName": "Christopher Duarte",
+    "team": "LDN",
+    "joined": "2021-02-09",
+    "left": "2021-03-15"
+  },
+  {
+    "nationality": "England",
+    "name": "Zer0",
+    "fullName": "Trei Morris",
+    "team": "LDN",
+    "joined": "2020-05-20",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "England",
+    "name": "Nastie",
+    "fullName": "Byron Plumridge",
+    "team": "LDN",
+    "joined": "2020-03-13",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "England",
+    "name": "MadCat",
+    "fullName": "Dylan Daly",
+    "team": "LDN",
+    "joined": "2019-11-07",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Wales",
+    "name": "Rated",
+    "fullName": "Rhys Price",
+    "team": "LDN",
+    "joined": "2019-09-29",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "Northern Ireland",
+    "name": "Dylan",
+    "fullName": "Thomas Henderson",
+    "team": "LDN",
+    "joined": "2019-09-20",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "England",
+    "name": "Skrapz",
+    "fullName": "Matthew Marshall",
+    "team": "LDN",
+    "joined": "2019-09-20",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "England",
+    "name": "wuskin",
+    "fullName": "Bradley Marshall",
+    "team": "LDN",
+    "joined": "2019-09-17",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "Republic of Ireland",
+    "name": "Jurd",
+    "fullName": "Jordan Crowley",
+    "team": "LDN",
+    "joined": "2019-09-28",
+    "left": "2020-09-01"
+  },
+  {
+    "nationality": "United States",
+    "name": "Sib",
+    "fullName": "Daunte Gray",
+    "team": "NYSL",
+    "joined": "2023-08-08",
+    "left": "2024-08-10"
+  },
+  {
+    "nationality": "United States",
+    "name": "Skyz",
+    "fullName": "Cesar Bueno",
+    "team": "NYSL",
+    "joined": "2023-06-30",
+    "left": "2024-08-10"
+  },
+  {
+    "nationality": "United States",
+    "name": "KiSMET",
+    "fullName": "Matthew Tinsley",
+    "team": "NYSL",
+    "joined": "2022-05-04",
+    "left": "2024-08-10"
+  },
+  {
+    "nationality": "France",
+    "name": "HyDra",
+    "fullName": "Paco Rusiewiez",
+    "team": "NYSL",
+    "joined": "2020-10-09",
+    "left": "2024-08-10"
+  },
+  {
+    "nationality": "United States",
+    "name": "Priestahh",
+    "fullName": "Preston Greiner",
+    "team": "NYSL",
+    "joined": "2022-10-06",
+    "left": "2023-07-18"
+  },
+  {
+    "nationality": "United States",
+    "name": "Skyz",
+    "fullName": "Cesar Bueno",
+    "team": "NYSL",
+    "joined": "2022-10-05",
+    "left": "2023-06-30"
+  },
+  {
+    "nationality": "England",
+    "name": "WarDy",
+    "fullName": "Elliot Ward",
+    "team": "NYSL",
+    "joined": "2022-10-07",
+    "left": "2023-06-28"
+  },
+  {
+    "nationality": "United States",
+    "name": "PaulEhx",
+    "fullName": "Paul Avila",
+    "team": "NYSL",
+    "joined": "2022-03-18",
+    "left": "2022-10-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Clayster",
+    "fullName": "James Eubanks",
+    "team": "NYSL",
+    "joined": "2020-09-18",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Crimsix",
+    "fullName": "Ian Porter",
+    "team": "NYSL",
+    "joined": "2021-10-22",
+    "left": "2022-08-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "Neptune",
+    "fullName": "Travis McCloud",
+    "team": "NYSL",
+    "joined": "2021-10-21",
+    "left": "2022-05-14"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Royalty",
+    "fullName": "Matthew Faithfull",
+    "team": "NYSL",
+    "joined": "2022-02-11",
+    "left": "2022-03-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Mack",
+    "fullName": "Makenzie Kelley",
+    "team": "NYSL",
+    "joined": "2020-03-08",
+    "left": "2021-09-17"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Asim",
+    "fullName": "Obaid Asim",
+    "team": "NYSL",
+    "joined": "2021-01-22",
+    "left": "2021-09-06"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Diamondcon",
+    "fullName": "Conor Johst",
+    "team": "NYSL",
+    "joined": "2021-05-21",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "United States",
+    "name": "Decemate",
+    "fullName": "Jacob Cato",
+    "team": "NYSL",
+    "joined": "2021-06-15",
+    "left": "2021-06-21"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Diamondcon",
+    "fullName": "Conor Johst",
+    "team": "NYSL",
+    "joined": "2021-01-21",
+    "left": "2021-05-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "ZooMaa",
+    "fullName": "Thomas Paparatto",
+    "team": "NYSL",
+    "joined": "2019-09-25",
+    "left": "2021-01-19"
+  },
+  {
+    "nationality": "United States",
+    "name": "Attach",
+    "fullName": "Dillon Price",
+    "team": "NYSL",
+    "joined": "2019-09-27",
+    "left": "2020-09-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Censor",
+    "fullName": "Doug Martin",
+    "team": "NYSL",
+    "joined": "2019-10-17",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Accuracy",
+    "fullName": "Lamar Abedi",
+    "team": "NYSL",
+    "joined": "2019-09-26",
+    "left": "2020-09-08"
+  },
+  {
+    "nationality": "United States",
+    "name": "Happy",
+    "fullName": "Nick Suda",
+    "team": "NYSL",
+    "joined": "2019-11-18",
+    "left": "2020-09-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "Temp",
+    "fullName": "Donovan Laroda",
+    "team": "NYSL",
+    "joined": "2019-09-26",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "England",
+    "name": "Zer0",
+    "fullName": "Trei Morris",
+    "team": "NYSL",
+    "joined": "2019-09-27",
+    "left": "2020-05-20"
+  },
+  {
+    "nationality": "United States",
+    "name": "04",
+    "fullName": "Jovan Rodriguez",
+    "team": "SEA",
+    "joined": "2024-04-09",
+    "left": "2024-08-11"
+  },
+  {
+    "nationality": "France",
+    "name": "Breszy",
+    "fullName": "Paul Breszynski",
+    "team": "SEA",
+    "joined": "2024-02-09",
+    "left": "2024-08-11"
+  },
+  {
+    "nationality": "Belgium",
+    "name": "Abuzah",
+    "fullName": "Jordan François",
+    "team": "SEA",
+    "joined": "2023-10-16",
+    "left": "2024-08-11"
+  },
+  {
+    "nationality": "United States",
+    "name": "Huke",
+    "fullName": "Cuyler Garland",
+    "team": "SEA",
+    "joined": "2023-10-16",
+    "left": "2024-08-11"
+  },
+  {
+    "nationality": "Canada",
+    "name": "iLLeY",
+    "fullName": "Indervir Dhaliwal",
+    "team": "SEA",
+    "joined": "2023-10-16",
+    "left": "2024-04-09"
+  },
+  {
+    "nationality": "United States",
+    "name": "Arcitys",
+    "fullName": "Alec Sanderson",
+    "team": "SEA",
+    "joined": "2023-10-16",
+    "left": "2024-03-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Accuracy",
+    "fullName": "Lamar Abedi",
+    "team": "SEA",
+    "joined": "2021-09-20",
+    "left": "2023-07-03"
+  },
+  {
+    "nationality": "United States",
+    "name": "Mack",
+    "fullName": "Makenzie Kelley",
+    "team": "SEA",
+    "joined": "2021-09-20",
+    "left": "2023-07-03"
+  },
+  {
+    "nationality": "Australia",
+    "name": "Pred",
+    "fullName": "Amer Zulbeari",
+    "team": "SEA",
+    "joined": "2021-09-20",
+    "left": "2023-07-03"
+  },
+  {
+    "nationality": "United States",
+    "name": "Sib",
+    "fullName": "Daunte Gray",
+    "team": "SEA",
+    "joined": "2021-09-20",
+    "left": "2023-07-03"
+  },
+  {
+    "nationality": "United States",
+    "name": "Gwinn",
+    "fullName": "Isaiah Gwinn",
+    "team": "SEA",
+    "joined": "2023-02-22",
+    "left": "2023-06-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Classic",
+    "fullName": "Nicholas DiCostanzo",
+    "team": "SEA",
+    "joined": "2022-03-04",
+    "left": "2022-10-25"
+  },
+  {
+    "nationality": "United States",
+    "name": "Classic",
+    "fullName": "Nicholas DiCostanzo",
+    "team": "SEA",
+    "joined": "2021-05-24",
+    "left": "2021-08-20"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Gunless",
+    "fullName": "Peirce Hillman",
+    "team": "SEA",
+    "joined": "2020-09-23",
+    "left": "2021-08-20"
+  },
+  {
+    "nationality": "United States",
+    "name": "Loony",
+    "fullName": "Daniel Loza",
+    "team": "SEA",
+    "joined": "2020-09-23",
+    "left": "2021-08-20"
+  },
+  {
+    "nationality": "United States",
+    "name": "Prestinni",
+    "fullName": "Preston Sanderson",
+    "team": "SEA",
+    "joined": "2020-09-23",
+    "left": "2021-08-20"
+  },
+  {
+    "nationality": "United States",
+    "name": "Octane",
+    "fullName": "Sam Larew",
+    "team": "SEA",
+    "joined": "2019-10-21",
+    "left": "2021-08-20"
+  },
+  {
+    "nationality": "United States",
+    "name": "Decemate",
+    "fullName": "Jacob Cato",
+    "team": "SEA",
+    "joined": "2021-05-03",
+    "left": "2021-05-18"
+  },
+  {
+    "nationality": "United States",
+    "name": "Pandur",
+    "fullName": "Casey Romano",
+    "team": "SEA",
+    "joined": "2020-02-17",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "United States",
+    "name": "Proto",
+    "fullName": "Nicholas Maldonado",
+    "team": "SEA",
+    "joined": "2019-11-27",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "United States",
+    "name": "Apathy",
+    "fullName": "Bryan Zhelyazkov",
+    "team": "SEA",
+    "joined": "2019-10-21",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "United States",
+    "name": "Enable",
+    "fullName": "Ian Wyatt",
+    "team": "SEA",
+    "joined": "2020-02-17",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "United States",
+    "name": "Slacked",
+    "fullName": "Josiah Berry",
+    "team": "SEA",
+    "joined": "2019-10-21",
+    "left": "2020-09-04"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Karma",
+    "fullName": "Damon Barlow",
+    "team": "SEA",
+    "joined": "2019-10-21",
+    "left": "2020-06-03"
+  },
+  {
+    "nationality": "United States",
+    "name": "Attach",
+    "fullName": "Dillon Price",
+    "team": "LVL",
+    "joined": "2023-11-12",
+    "left": "2024-08-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "Fame",
+    "fullName": "Kevin Bonanno",
+    "team": "LVL",
+    "joined": "2024-07-24",
+    "left": "2024-08-19"
+  },
+  {
+    "nationality": "United States",
+    "name": "Gio",
+    "fullName": "Giovanni Webster",
+    "team": "LVL",
+    "joined": "2024-02-14",
+    "left": "2024-08-19"
+  },
+  {
+    "nationality": "United States",
+    "name": "Nero",
+    "fullName": "Dylan Koch",
+    "team": "LVL",
+    "joined": "2023-11-12",
+    "left": "2024-08-19"
+  },
+  {
+    "nationality": "United States",
+    "name": "oJohnny",
+    "fullName": "Giancarlos Carrasco",
+    "team": "LVL",
+    "joined": "2024-05-09",
+    "left": "2024-07-22"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Asim",
+    "fullName": "Obaid Asim",
+    "team": "LVL",
+    "joined": "2024-04-17",
+    "left": "2024-05-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Purj",
+    "fullName": "Evan Perez",
+    "team": "LVL",
+    "joined": "2023-11-12",
+    "left": "2024-04-17"
+  },
+  {
+    "nationality": "United States",
+    "name": "Standy",
+    "fullName": "Eli Bentz",
+    "team": "LVL",
+    "joined": "2023-11-12",
+    "left": "2024-02-13"
+  },
+  {
+    "nationality": "United States",
+    "name": "TJHaLy",
+    "fullName": "Thomas Haly",
+    "team": "LVL",
+    "joined": "2022-10-07",
+    "left": "2023-06-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Temp",
+    "fullName": "Donovan Laroda",
+    "team": "LVL",
+    "joined": "2022-09-12",
+    "left": "2023-06-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Standy",
+    "fullName": "Eli Bentz",
+    "team": "LVL",
+    "joined": "2023-03-24",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Clayster",
+    "fullName": "James Eubanks",
+    "team": "LVL",
+    "joined": "2022-10-07",
+    "left": "2023-06-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "2ReaL",
+    "fullName": "Brendan Stockdale",
+    "team": "LVL",
+    "joined": "2023-02-14",
+    "left": "2023-03-27"
+  },
+  {
+    "nationality": "United States",
+    "name": "Prolute",
+    "fullName": "Byron Vera",
+    "team": "LVL",
+    "joined": "2022-10-07",
+    "left": "2023-02-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "Assault",
+    "fullName": "Adam Garcia",
+    "team": "LAG",
+    "joined": "2023-11-28",
+    "left": "2024-08-19"
+  },
+  {
+    "nationality": "United States",
+    "name": "Flames",
+    "fullName": "John-Alexander Dieguez",
+    "team": "LAG",
+    "joined": "2023-12-07",
+    "left": "2024-08-06"
+  },
+  {
+    "nationality": "United States",
+    "name": "Fame",
+    "fullName": "Kevin Bonanno",
+    "team": "LAG",
+    "joined": "2023-11-28",
+    "left": "2024-07-24"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Diamondcon",
+    "fullName": "Conor Johst",
+    "team": "LAG",
+    "joined": "2023-11-28",
+    "left": "2024-07-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Estreal",
+    "fullName": "Justice McMillan",
+    "team": "LAG",
+    "joined": "2023-11-28",
+    "left": "2024-07-23"
+  },
+  {
+    "nationality": "United States",
+    "name": "Arcitys",
+    "fullName": "Alec Sanderson",
+    "team": "LAG",
+    "joined": "2022-08-24",
+    "left": "2023-10-16"
+  },
+  {
+    "nationality": "United States",
+    "name": "Spart",
+    "fullName": "Kris Cervantez",
+    "team": "LAG",
+    "joined": "2021-12-21",
+    "left": "2023-08-24"
+  },
+  {
+    "nationality": "United States",
+    "name": "Assault",
+    "fullName": "Adam Garcia",
+    "team": "LAG",
+    "joined": "2023-01-03",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Exceed",
+    "fullName": "Kaden Stockdale",
+    "team": "LAG",
+    "joined": "2023-01-03",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "JoeDeceives",
+    "fullName": "Joseph Romero",
+    "team": "LAG",
+    "joined": "2023-01-03",
+    "left": "2023-06-26"
+  },
+  {
+    "nationality": "United States",
+    "name": "Neptune",
+    "fullName": "Travis McCloud",
+    "team": "LAG",
+    "joined": "2022-06-16",
+    "left": "2023-03-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "Huke",
+    "fullName": "Cuyler Garland",
+    "team": "LAG",
+    "joined": "2021-09-06",
+    "left": "2023-01-03"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Asim",
+    "fullName": "Obaid Asim",
+    "team": "LAG",
+    "joined": "2021-09-06",
+    "left": "2022-09-14"
+  },
+  {
+    "nationality": "United States",
+    "name": "SlasheR",
+    "fullName": "Austin Liddicoat",
+    "team": "LAG",
+    "joined": "2021-09-06",
+    "left": "2022-08-26"
+  },
+  {
+    "nationality": "Canada",
+    "name": "Gunless",
+    "fullName": "Peirce Hillman",
+    "team": "LAG",
+    "joined": "2021-09-06",
+    "left": "2022-08-15"
+  },
+  {
+    "nationality": "United States",
+    "name": "Cheen",
+    "fullName": "Martin Chino",
+    "team": "LAG",
+    "joined": "2021-06-21",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "United States",
+    "name": "Apathy",
+    "fullName": "Bryan Zhelyazkov",
+    "team": "LAG",
+    "joined": "2020-10-12",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "United States",
+    "name": "Assault",
+    "fullName": "Adam Garcia",
+    "team": "LAG",
+    "joined": "2020-10-12",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "United States",
+    "name": "MentaL",
+    "fullName": "Billy Putnam",
+    "team": "LAG",
+    "joined": "2020-10-12",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "United States",
+    "name": "SiLLY",
+    "fullName": "Justin Fargo-Palmer",
+    "team": "LAG",
+    "joined": "2020-10-12",
+    "left": "2021-08-29"
+  },
+  {
+    "nationality": "United States",
+    "name": "Cheen",
+    "fullName": "Martin Chino",
+    "team": "LAG",
+    "joined": "2020-10-12",
+    "left": "2021-06-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "Vivid",
+    "fullName": "Reece Drost",
+    "team": "LAG",
+    "joined": "2020-02-28",
+    "left": "2021-05-21"
+  },
+  {
+    "nationality": "United States",
+    "name": "Spart",
+    "fullName": "Kris Cervantez",
+    "team": "LAG",
+    "joined": "2020-02-28",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Blazt",
+    "fullName": "Rasim Ogresevic",
+    "team": "LAG",
+    "joined": "2019-12-12",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Lacefield",
+    "fullName": "Andres Lacefield",
+    "team": "LAG",
+    "joined": "2019-11-03",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Saints",
+    "fullName": "Renato Forza",
+    "team": "LAG",
+    "joined": "2019-11-02",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Decemate",
+    "fullName": "Jacob Cato",
+    "team": "LAG",
+    "joined": "2019-11-01",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "AquA",
+    "fullName": "Ulysses Silva",
+    "team": "LAG",
+    "joined": "2019-10-31",
+    "left": "2020-09-07"
+  },
+  {
+    "nationality": "United States",
+    "name": "Ricky",
+    "fullName": "Richard Stacy",
+    "team": "LAG",
+    "joined": "2020-01-13",
+    "left": "2020-09-01"
+  },
+  {
+    "nationality": "United States",
+    "name": "ACHES",
+    "fullName": "Patrick Price",
+    "team": "LAG",
+    "joined": "2019-10-25",
+    "left": "2020-07-22"
+  }
+]

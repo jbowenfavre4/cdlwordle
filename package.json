@@ -1,0 +1,30 @@
+{
+  "name": "cdlwordle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbowenfavre4/cdlwordle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbowenfavre4/cdlwordle/issues"
+  },
+  "homepage": "https://github.com/jbowenfavre4/cdlwordle#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "jquery": "^3.7.1",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.2",
+    "puppeteer": "^23.10.4"
+  }
+}

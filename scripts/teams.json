@@ -1,0 +1,117 @@
+[
+    {
+        "name": "Atlanta FaZe",
+        "abb": "ATL",
+        "url": "Atlanta_FaZe"
+    },
+    {
+        "name": "Boston Breach",
+        "abb": "BOS",
+        "url": "Boston_Breach"
+    },
+    {
+        "name": "Carolina Royal Ravens",
+        "abb": "CAR",
+        "url": "Carolina_Royal_Ravens"
+    },
+    {
+        "name": "Las Vegas Falcons",
+        "abb": "LV",
+        "url": "Las_Vegas_Falcons"
+    },
+    {
+        "name": "Los Angeles Guerrillas M8",
+        "abb": "LAGM",
+        "url": "Los_Angeles_Guerrillas_M8"
+    },
+    {
+        "name": "Los Angeles Thieves",
+        "abb": "LAT",
+        "url": "Los_Angeles_Thieves"
+    },
+    {
+        "name": "Miami Heretics",
+        "abb": "MIA",
+        "url": "Miami_Heretics"
+    },
+    {
+        "name": "Minnesota RØKKR",
+        "abb": "MIN",
+        "url": "Minnesota_RØKKR"
+    },
+    {
+        "name": "Cloud9 New York",
+        "abb": "C9NY",
+        "url": "Cloud9_New_York"
+    },
+    {
+        "name": "OpTic Texas",
+        "abb": "TEX",
+        "url": "OpTic_Texas"
+    },
+    {
+        "name": "Toronto Ultra",
+        "abb": "TOR",
+        "url": "Toronto_Ultra"
+    },
+    {
+        "name": "Vancouver Surge",
+        "abb": "VAN",
+        "url": "Vancouver_Surge"
+    },
+    {
+        "name": "OpTic Gaming Los Angeles",
+        "abb": "OGLA",
+        "url": "OpTic_Gaming_Los_Angeles"
+    },
+    {
+        "name": "Chicago Huntsmen",
+        "abb": "CHH",
+        "url": "Chicago_Huntsmen"
+    },
+    {
+        "name": "OpTic Chicago",
+        "abb": "CHI",
+        "url": "OpTic_Chicago"
+    },
+    {
+        "name": "Dallas Empire",
+        "abb": "DAL",
+        "url": "Dallas_Empire"
+    },
+    {
+        "name": "Paris Legion",
+        "abb": "PAR",
+        "url": "Paris_Legion"
+    },
+    {
+        "name": "Florida Mutineers",
+        "abb": "FLA",
+        "url": "Florida_Mutineers"
+    },
+    {
+        "name": "London Royal Ravens",
+        "abb": "LDN",
+        "url": "London_Royal_Ravens"
+    },
+    {
+        "name": "New York Subliners",
+        "abb": "NYSL",
+        "url": "New_York_Subliners"
+    },
+    {
+        "name": "Seattle Surge",
+        "abb": "SEA",
+        "url": "Seattle_Surge"
+    },
+    {
+        "name": "Las Vegas Legion",
+        "abb": "LVL",
+        "url": "Las_Vegas_Legion"
+    },
+    {
+        "name": "Los Angeles Guerrillas",
+        "abb": "LAG",
+        "url": "Los_Angeles_Guerrillas"
+    }
+]

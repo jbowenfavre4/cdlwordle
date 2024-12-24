@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bootstrap Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a6e9d4678d.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Ensure the body and html stretch to the full height of the viewport */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Push the footer to the bottom */
+        .content {
+            flex-grow: 1;
+        }
+
+        footer {
+            margin-top: auto; /* Ensures footer stays at the bottom */
+        }
+
+        body {
+            padding-top: 36px;
+        }
+
+        .info-square {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background-color 0.5s ease;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .info-square p {
+            margin-bottom: 10px;
+        }
+
+        .info-square .content {
+            font-weight: bold;
+        }
+
+        #playerDropdown {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            width: calc(100% - 60px);
+            z-index: 1050;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #212529;
+            border-radius: 0.375rem;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            white-space: nowrap;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-control {
+            border-radius: 0.5rem;
+        }
+
+        .table-cell {
+            display: inline;
+            border-radius: 5px;
+            padding: 3px;
+        }
+
+        .match {
+            background-color: green;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .info-square::-webkit-scrollbar {
+            width: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #mysteryName {
+            font-weight: bolder;
+            color: green;
+        }
+
+        .info-square::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .info-square::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1050;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <!-- Loading icon -->
+    <div id="loadingOverlay" class="loading-overlay d-none">
+        <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container text-light text-center content">
+        <!-- Title Row -->
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto text-center"><h1>CDL Wordle</h1></div>
+            <div class="col-auto align-content-center" id="help"><i class="fa-solid fa-circle-question"></i></div>
+        </div>
+
+        <!-- Search Label -->
+        <div class="row">
+            <label for="playerSearchBar" class="form-label">Start typing to guess a player...</label>
+        </div>
+
+        <!-- Search Bar and Button -->
+        <div class="row g-2 align-items-center justify-content-center">
+            <div class="col-12 col-md-8 position-relative">
+                <div class="d-flex">
+                    <input type="text" class="form-control bg-dark text-light me-2" id="playerSearchBar" placeholder="Search players..." autocomplete="off">
+                    <button class="btn btn-primary" id="guessPlayer" disabled>Guess</button>
+                </div>
+                <div class="dropdown-menu w-100" id="playerDropdown"></div>
+            </div>
+        </div>
+
+        <h3 class="d-none mt-3" id="correctMessage">You guessed <span id="mysteryName"></span> in <span class="guessCount"></span> tries</h3>
+
+        <!-- Main Content -->
+        <div class="container text-light text-center mt-3 p-0">
+            <div class="row g-3 d-flex flex-wrap">
+                <div class="col d-flex">
+                    <div class="info-square flex-grow-1" id="nationalitySquare">
+                        <p>Nationality</p>
+                        <div class="content" id="mysteryNationality">?</div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="info-square flex-grow-1" id="ageSquare">
+                        <p>Age</p>
+                        <div class="content" id="mysteryAge">?</div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="info-square flex-grow-1" id="winsSquare">
+                        <p>Wins</p>
+                        <div class="content" id="mysteryWins">?</div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="info-square flex-grow-1" id="ringsSquare">
+                        <p>Rings</p>
+                        <div class="content" id="mysteryRings">?</div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="info-square flex-grow-1" id="teamsSquare">
+                        <p>Teams</p>
+                        <div class="content" id="mysteryTeams">?</div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="info-square flex-grow-1" id="teammatesSquare">
+                        <p>Teammates</p>
+                        <div class="content" id="mysteryTeammates">?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guess section -->
+        <div class="row mt-4">
+            <div class="col">
+                <h3 id="guessMessage">Guesses Made: <span class="guessCount">0</span></h3>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Nationality</th>
+                                <th>Age</th>
+                                <th>Wins</th>
+                                <th>Rings</th>
+                                <th>Teams</th>
+                                <th>Teammates</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guessesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- success modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-body">
+                        <h2 class="mt-2">The mystery player was:</h2>
+                        <h2 id="correctModalName"style="color: green"></h2>
+                        <p>You got it in <span id="guessCountModal"></span> tries. Come back tomorrow for a new game.</p>
+                        <h4 class="mt-4">Today's Game Global Stats</h4>
+                        <canvas id="globalChart" width="400" height="200"></canvas>
+                        <h4 class="mt-4">Your History</h4>
+                        <canvas id="guessesChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- help modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content bg-dark text-light border-0">
+                  <!-- Modal Header -->
+                  <div class="modal-header justify-content-center border-0">
+                      <h2 class="modal-title">CDL Wordle</h2>
+                      <button type="button" class="btn-close btn-close-white position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+      
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                      <p>Guess the CDL player (changes each day at midnight PST)</p>
+                      <h3>How to play</h3>
+                      <p style="text-align: justify">Guess a CDL player by typing into the search bar and selecting a player from the dropdown list, and then click Guess. Incorrect guesses will be shown in the table. If any of the information for the player that you guessed matches the mystery player, it will be highlighted green. The squares at the top will contain any known information about the mystery player.</p>
+                      <h3>Which players are included?</h3>
+                      <p style="text-align: justify">Only players who have played in the CDL era are included, but wins and rings from before the CDL are counted. Substitutes are included and count as teammates, but coaches do not.</p>
+                      <h3>Problems and Feedback</h3>
+                      <p style="text-align: justify">Feel free to use the links at the bottom of the page to report any feedback, bugs, or issues with the data. Gathering data for this game was not easy and there are probably some flaws.</p>
+                      <p style="text-align: justify">Special thanks to the <a href="https://cod-esports.fandom.com/wiki/Call_of_Duty_Esports_Wiki" target="_blank">COD Esports Wiki</a> which is the source for most of the data.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3 row">
+      <div class="col-sm-6">
+        <p style="font-weight: bold">Created by <a href="https://buymeacoffee.com/dizzzz">Diz</a>
+      </div>
+      <div class="col-sm-6">
+        <p style="font-weight: bold"><a href="https://discord.gg/bqCHQaU9vn">Report a bug</a></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
