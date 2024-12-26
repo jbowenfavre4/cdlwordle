@@ -2,7 +2,6 @@ const mongoose = require('../db')
 require('dotenv').config()
 
 const dbString = process.env.DB_STRING
-console.log(dbString)
 const startDate = new Date()
 
 const playerSchema = new mongoose.Schema({
@@ -28,7 +27,7 @@ const Player = mongoose.model('Player', playerSchema)
 const MysteryPlayer = mongoose.model('MysteryPlayer', mysteryPlayerSchema)
 
 async function seedMysteryPlayers() {
-    console.log("Generating mystery players:");
+
     try {
         await mongoose.connect(dbString, {
             useNewUrlParser: true,

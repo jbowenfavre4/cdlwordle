@@ -175,7 +175,6 @@ async function findTodaysPlayer() {
             throw new Error('Mystery player not found.');
         }
 
-        console.log(playerInfo);
         return playerInfo;
     } catch (err) {
         console.error('Error finding player:', err);

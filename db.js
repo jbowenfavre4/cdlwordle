@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 require('dotenv').config();  // Loads variables from .env file
 
 const dbString = process.env.DB_STRING;
-console.log(dbString)
 
 if (!dbString) {
     console.error('DB_STRING is not defined in .env file');

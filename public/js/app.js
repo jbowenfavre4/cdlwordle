@@ -1,5 +1,4 @@
 $(document).ready(async () => {
-  console.log("jQuery is ready!");
   const $searchBar = $('#playerSearchBar')
   const $dropDown = $('#playerDropdown')
 
@@ -120,7 +119,6 @@ $(document).ready(async () => {
       localStorage.setItem("GAME_STATE", JSON.stringify(clean_state))
     }
     game_state = JSON.parse(localStorage.getItem("GAME_STATE"))
-    console.log("TIME: ", game_state)
     if (hasMysteryPlayerChanged(game_state.lastGuess)) {
       game_state = JSON.parse(JSON.stringify(CLEAN_STATE))
     }
@@ -178,7 +176,6 @@ $(document).ready(async () => {
             }
             for (let team of response.teams) {
               if (!containsString($('#teamsSquare'), team)) {
-                console.log('laksdjhflaksjdhf')
                 $('#mysteryTeams').append(`<p class="mb-0">${team}</p>`)
                 game_state.teams.push(team)
               }
@@ -487,7 +484,6 @@ function populateExistingGuesses(state) {
     }
   }
 
-  console.log(state)
   if (state.age != null) {
     $('#mysteryAge').text(state.age)
     $('#ageSquare').css("background-color", "green")
@@ -497,7 +493,6 @@ function populateExistingGuesses(state) {
     $('#nationalitySquare').css('background-color', 'green')
   }
   if (state.rings != null) {
-    console.log("hello")
     $('#mysteryRings').text(state.rings)
     $('#ringsSquare').css('background-color', 'green')
   }
@@ -542,8 +537,6 @@ function hideLoading() {
 
 function populateSuccessModal(game_state) {
   const guesses = JSON.parse(localStorage.getItem("GAME_HISTORY")).history
-  console.log("game_state: ", game_state)
-  console.log("guesses: ", guesses)
   createGuessesChart(guesses)
   $('#guessCountModal').text(game_state.guesses.length)
   $('#correctModalName').text(game_state.name)
