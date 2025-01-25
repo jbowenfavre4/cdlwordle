@@ -9,6 +9,19 @@ const resultsRouter = require("./src/routes/resultsRouter")
 
 app.use(express.json())
 
+app.use((req, res, next) => {
+  const host = req.headers.host;
+  console.log("host: ", req.headers.host)
+  const isOldUrl = host === 'cdlwordle-production.up.railway.app';
+
+  if (isOldUrl) {
+    const newUrl = `https://www.cdlwordle.me${req.originalUrl}`;
+    return res.redirect(301, newUrl); // 301 indicates a permanent redirect
+  }
+  
+  next();
+});
+
 // Serve static files (JS, CSS, images) from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
