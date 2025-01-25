@@ -22,7 +22,7 @@ app.use('/api/results', resultsRouter)
 
 app.use((req, res, next) => {
   const host = req.headers.host;
-  console.log(host)
+  console.log("host: ", req.headers.host)
   const isOldUrl = host === 'cdlwordle-production.up.railway.app';
 
   if (isOldUrl) {
