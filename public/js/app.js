@@ -383,7 +383,7 @@ function setCorrectState(game_state) {
     const $el = $(this); // Convert to a jQuery object
     $el.text(game_state.guesses.length); // Update the text
   });
-  $("#mysteryName").text(game_state.name)
+  $("#mysteryName").append(`<a href="https://cod-esports.fandom.com/wiki/${game_state.name}" target="_blank">${game_state.name}</a>`)
 
   $('#playerSearchBar').attr("disabled", true)
   $('#guessPlayer').attr('disabled', true)
@@ -539,7 +539,7 @@ function populateSuccessModal(game_state) {
   const guesses = JSON.parse(localStorage.getItem("GAME_HISTORY")).history
   createGuessesChart(guesses)
   $('#guessCountModal').text(game_state.guesses.length)
-  $('#correctModalName').text(game_state.name)
+  $('#correctModalName').append(`<a href="https://cod-esports.fandom.com/wiki/${game_state.name}" target="_blank">${game_state.name}</a>`)
 }
 
 function createGuessesChart(guesses) {
