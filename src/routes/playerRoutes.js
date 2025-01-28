@@ -185,6 +185,9 @@ async function findTodaysPlayer() {
   
 
 function calculateAge(dob) {
+    if (dob == null) {
+        return "Unknown"
+    }
     const dobDate = new Date(dob); // Convert the DOB string to a Date object
     const today = new Date(); // Get today's date
   
