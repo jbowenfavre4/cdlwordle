@@ -12,10 +12,13 @@ router.post('/', async (req, res) => {
         })
     }
 
+    const now = new Date()
+
     try {
         const doc = new Result({
             name: req.body.name,
-            guesses: req.body.guesses
+            guesses: req.body.guesses,
+            dateTime: now
         })
         await doc.save()
         return res.status(200).json({
@@ -37,8 +40,19 @@ router.get('/', async (req, res) => {
     }
 
     try {
+        const now = new Date()
+        const pacificOffset = now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
+        const pacificNow = new Date(pacificOffset)
+        const startOfDay = new Date(pacificNow)
+        startOfDay.setHours(0,0,0,0)
+        const endOfDay = new Date(pacificNow)
+        endOfDay.setHours(23, 59, 59, 999)
+        const startOfDayUTC = new Date(startOfDay.toISOString())
+        const endOfDayUTC = new Date(endOfDay.toISOString())
+
         const results = await Result.find({
-            name: req.query.name
+            name: req.query.name,
+            dateTime: { $gte: startOfDayUTC, $lte: endOfDayUTC }
         })
         res.json(results)
     } catch(e) {

@@ -14,6 +14,7 @@ router.get('/search', async (req, res) => {
         const players = await Player.find({
             name: { $regex: searchQuery, $options: 'i' }
         }, 'name').limit(10)
+        
         res.json(players)
     } catch(e) {
         console.error('Error fetching playeres: ', e)
