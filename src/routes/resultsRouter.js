@@ -40,30 +40,28 @@ router.get("/", async (req, res) => {
     try {
         const now = new Date();
 
-        // Convert current UTC time to Pacific Time
+        // Convert current time to Pacific Time
         const pacificNow = new Date(now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
 
-        // Get start and end of the day in Pacific Time
-        const startOfDay = new Date(pacificNow);
-        startOfDay.setHours(0, 0, 0, 0); // Midnight Pacific Time
+        // Get today's Pacific date (year, month, day only)
+        const pacificYear = pacificNow.getFullYear();
+        const pacificMonth = pacificNow.getMonth();
+        const pacificDay = pacificNow.getDate();
 
-        const endOfDay = new Date(pacificNow);
-        endOfDay.setHours(23, 59, 59, 999); // End of day Pacific Time
+        // Define Midnight and End of Day in Pacific Time
+        const startOfDayPST = new Date(Date.UTC(pacificYear, pacificMonth, pacificDay, 8, 0, 0, 0)); // 00:00 PST = 08:00 UTC
+        const endOfDayPST = new Date(Date.UTC(pacificYear, pacificMonth, pacificDay + 1, 7, 59, 59, 999)); // 23:59 PST = 07:59 UTC next day
 
-        // Convert Pacific Time to UTC (since MongoDB stores times in UTC)
-        const startOfDayUTC = new Date(startOfDay.getTime() + startOfDay.getTimezoneOffset() * 60000);
-        const endOfDayUTC = new Date(endOfDay.getTime() + endOfDay.getTimezoneOffset() * 60000);
-
-        // Debugging Logs
+        // Debugging logs
         console.log("Querying results with:");
         console.log("Player Name:", req.query.name);
-        console.log("Start of Day UTC:", startOfDayUTC.toISOString());
-        console.log("End of Day UTC:", endOfDayUTC.toISOString());
+        console.log("Start of Day UTC:", startOfDayPST.toISOString());
+        console.log("End of Day UTC:", endOfDayPST.toISOString());
 
-        // MongoDB Query
+        // Query MongoDB
         const results = await Result.find({
             name: req.query.name,
-            dateTime: { $gte: startOfDayUTC, $lte: endOfDayUTC },
+            dateTime: { $gte: startOfDayPST, $lte: endOfDayPST },
         });
 
         res.json(results);
