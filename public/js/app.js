@@ -20,6 +20,8 @@ $(document).ready(async () => {
     new bootstrap.Modal(document.getElementById('helpModal')).show();
   }
 
+  console.log("testing 3")
+
   let initial_state = JSON.parse(localStorage.getItem("GAME_STATE"))
   if (initial_state) {
     $(".guessCount").each(function () {
@@ -29,6 +31,11 @@ $(document).ready(async () => {
     });
     if (hasMysteryPlayerChanged(initial_state.lastGuess)) {
       let clean_state = JSON.parse(JSON.stringify(CLEAN_STATE))
+      $(".guessCount").each(function () {
+        const $el = $(this); // Convert to a jQuery object
+        const currentCount = 0; // Safely parse the current count
+        $el.text(currentCount); // Update the text
+      });
       localStorage.setItem("GAME_STATE", JSON.stringify(clean_state))
     } else if (initial_state.correct && !hasMysteryPlayerChanged(initial_state.lastGuess)) {
       populateExistingGuesses(initial_state)
