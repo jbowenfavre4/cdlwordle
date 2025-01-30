@@ -676,6 +676,7 @@ function createGlobalChart(data) {
 async function setupGlobalChart(name) {
   const results = await $.get(`/api/results?name=${name}`)
   if (results) {
+    $('#totalPlayers').text(results.length)
     createGlobalChart(results)
   } else {
     $('#guessesChart').text('Unable to load global results')
