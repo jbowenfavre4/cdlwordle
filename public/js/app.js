@@ -116,6 +116,7 @@ $(document).ready(async () => {
 
 
   $('#guessPlayer').on('click', async (e) => {
+    console.log("hello")
     showLoading()
     $('#guessPlayer').attr('disabled', true)
     const nowUTC = new Date().toISOString()
@@ -127,7 +128,11 @@ $(document).ready(async () => {
     }
     game_state = JSON.parse(localStorage.getItem("GAME_STATE"))
     if (hasMysteryPlayerChanged(game_state.lastGuess)) {
+      const lastGuess = game_state.lastGuess
       game_state = JSON.parse(JSON.stringify(CLEAN_STATE))
+      if (lastGuess != null) {
+        location.reload()
+      }
     }
     
     game_state.lastGuess = nowUTC
