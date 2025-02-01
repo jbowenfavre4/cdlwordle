@@ -676,10 +676,20 @@ function createGlobalChart(data) {
 async function setupGlobalChart(name) {
   const results = await $.get(`/api/results?name=${name}`)
   if (results) {
+    setMeanGuesses(results)
     const filteredResults = results.filter(result => result.guesses !== null)
     $('#totalPlayers').text(results.length)
     createGlobalChart(filteredResults)
   } else {
     $('#guessesChart').text('Unable to load global results')
   }
+}
+
+async function setMeanGuesses(data) {
+  const filteredData = data.filter(result => result.guesses!== null && result.guesses!== 1)
+  console.log(filteredData)
+  const total = filteredData.reduce((sum, obj) => sum + obj.guesses, 0)
+  const mean = total / filteredData.length
+  const roundedMean = parseFloat(mean.toFixed(1))
+  $("#meanGuesses").text(roundedMean)
 }
