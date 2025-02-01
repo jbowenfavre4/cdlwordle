@@ -52,12 +52,6 @@ router.get("/", async (req, res) => {
         const startOfDayPST = new Date(Date.UTC(pacificYear, pacificMonth, pacificDay, 8, 0, 0, 0)); // 00:00 PST = 08:00 UTC
         const endOfDayPST = new Date(Date.UTC(pacificYear, pacificMonth, pacificDay + 1, 7, 59, 59, 999)); // 23:59 PST = 07:59 UTC next day
 
-        // Debugging logs
-        console.log("Querying results with:");
-        console.log("Player Name:", req.query.name);
-        console.log("Start of Day UTC:", startOfDayPST.toISOString());
-        console.log("End of Day UTC:", endOfDayPST.toISOString());
-
         // Query MongoDB
         const results = await Result.find({
             name: req.query.name,
