@@ -25,6 +25,28 @@ router.get('/search', async (req, res) => {
 })
 
 router.post('/guess', async (req, res) => {
+    if (req.body.giveup && req.body.giveup === true) {
+        const mysteryPlayer = await findTodaysPlayer()
+        if (!mysteryPlayer) {
+            return res.status(500).json({
+                message: "Server error. Please try again."
+            })
+        }
+        let mysteryTeammates = await getTeammates(mysteryPlayer.name)
+        const mysteryTeams = await getTeams(mysteryPlayer.name)
+        return res.status(200).json({
+            correct: true,
+            gaveup: true,
+            name: mysteryPlayer.name,
+            age: calculateAge(mysteryPlayer.dob),
+            nationality: mysteryPlayer.nationality,
+            rings: mysteryPlayer.rings,
+            wins: mysteryPlayer.wins,
+            teammates: mysteryTeammates,
+            teams: mysteryTeams
+        })
+    }
+
     if (!req.body.player) {
         return res.status(400).json({
             message: "Please provide the guessed player."
@@ -52,6 +74,7 @@ router.post('/guess', async (req, res) => {
     if (mysteryPlayer._id.equals(guessedPlayer._id)) {
         return res.status(200).json({
             correct: true,
+            gaveup: false,
             name: mysteryPlayer.name,
             age: calculateAge(mysteryPlayer.dob),
             nationality: mysteryPlayer.nationality,

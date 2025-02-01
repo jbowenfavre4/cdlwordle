@@ -6,7 +6,7 @@ require("dotenv").config()
 // results routes
 
 router.post('/', async (req, res) => {
-    if (!req.body.name || !req.body.guesses) {
+    if (!req.body.name || (!req.body.guesses && req.body.guesses != null)) {
         return res.status(400).json({
             message: "Name and guesses are required."
         })

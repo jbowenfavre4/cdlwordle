@@ -131,6 +131,11 @@
             align-items: center;
             z-index: 1050;
         }
+
+        .btn-primary {
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
     </style>
 </head>
 <body class="bg-dark">
@@ -147,9 +152,6 @@
         <div class="row justify-content-center mb-3">
             <div class="col-auto text-center"><h1>CDL Wordle</h1></div>
             <div class="col-auto align-content-center" id="help"><i class="fa-solid fa-circle-question"></i></div>
-            <div>
-                <h5>The OpTic boys played my game!! --> <a href="https://youtube.com/clip/UgkxgLHsd2f14g35gSeoT9eXtQBMG5oVIDap?si=9qLjXrok55QR9KtH">Clip</a></h5>
-            </div>
         </div>
 
         <!-- Search Label -->
@@ -162,13 +164,15 @@
             <div class="col-12 col-md-8 position-relative">
                 <div class="d-flex">
                     <input type="text" class="form-control bg-dark text-light me-2" id="playerSearchBar" placeholder="Search players..." autocomplete="off">
-                    <button class="btn btn-primary" id="guessPlayer" disabled>Guess</button>
+                    <button class="btn btn-primary me-2" id="guessPlayer" disabled>Guess</button>
+                    <button class="btn btn-primary" id="giveUp" disabled>Give up</button>
                 </div>
                 <div class="dropdown-menu w-100" id="playerDropdown"></div>
             </div>
         </div>
 
         <h3 class="d-none mt-3" id="correctMessage">You guessed <span id="mysteryName"></span> in <span class="guessCount"></span> tries</h3>
+        <h3 class="d-none mt-3" id="giveUpMessage">You gave up. The answer was <span id="mysteryNameGiveUp"></span></h3>
 
         <!-- Main Content -->
         <div class="container text-light text-center mt-3 p-0">
@@ -248,12 +252,24 @@
                     <div class="modal-body">
                         <h2 class="mt-2">The mystery player was:</h2>
                         <h2 id="correctModalName"style="color: green"></h2>
-                        <p>You got it in <span id="guessCountModal"></span> tries. Come back tomorrow for a new game.</p>
+                        <p id="successGuessCount" class="d-none">You got it in <span id="guessCountModal"></span> tries. Come back tomorrow for a new game.</p>
+                        <p id="giveUpGuessCount" class="d-none">You gave up after <span id="giveUpGuessCountModal"></span> guesses. Come back tomorrow for a new game.</p>
                         <h4 class="mt-4">Today's Game Global Stats</h4>
                         <p class="mb-0"> Total players today: <span id="totalPlayers" style="font-weight: bold; color: green"></span></p>
-                        <p> Today's average score: <span id="meanGuesses" style="font-weight: bold; color: green"></span> guesses</p>
+                        <p class="mb-0"> Today's average score: <span id="meanGuesses" style="font-weight: bold; color: green"></span> guesses</p>
+                        <p>Give up percentage: <span id="globalGiveUps" style="font-weight: bold;">0</span><span style="font-weight: bold;">%</span></p>
                         <canvas id="globalChart" width="400" height="200"></canvas>
                         <h4 class="mt-4">Your History</h4>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
+                                    <p class="mb-0">Personal average: <span id='personalMean' style="font-weight: bold; color: green">-</span></p>
+                                </div>
+                                <div class="col-auto">
+                                    <p class="mb-0">Giveups: <span id='personalGiveUpCount' style="font-weight: bold;">0</span></p>
+                                </div>
+                            </div>
+                        </div>                        
                         <canvas id="guessesChart" width="400" height="200"></canvas>
                     </div>
                 </div>
@@ -274,7 +290,7 @@
                   <div class="modal-body">
                       <p>Guess the CDL player (changes each day at midnight PST)</p>
                       <h3>How to play</h3>
-                      <p style="text-align: justify">Guess a CDL player by typing into the search bar and selecting a player from the dropdown list, and then click Guess. Incorrect guesses will be shown in the table. If any of the information for the player that you guessed matches the mystery player, it will be highlighted green. The squares at the top will contain any known information about the mystery player.</p>
+                      <p style="text-align: justify">Guess a CDL player by typing into the search bar and selecting a player from the dropdown list, and then click Guess. Incorrect guesses will be shown in the table. If any of the information for the player that you guessed matches the mystery player, it will be highlighted green. The squares at the top will contain any known information about the mystery player. After 8 incorrect guesses, you may give up and see the answer. If you give up, the game will not count towards your personal or global stats.</p>
                       <h3>Which players are included?</h3>
                       <p style="text-align: justify">Only players who have played in the CDL era are included, but wins and rings from before the CDL are counted. Teammates are CDL only. Substitutes are included and count as teammates, but coaches do not.</p>
                       <h3>Problems and Feedback</h3>
