@@ -492,7 +492,7 @@ function createGlobalChart(data) {
 }
 
 async function setupGlobalChart(name) {
-  const results = await $.get(`/api/results?name=${name}&_=${new Date().getTime()}`)
+  const results = await $.get(`/api/results?name=${name}`)
   if (results) {
     setMeanGuesses(results)
     const filteredResults = results.filter(result => result.guesses !== null)
