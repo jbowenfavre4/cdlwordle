@@ -489,7 +489,7 @@ function createGlobalChart(data) {
 }
 
 async function setupGlobalChart(name) {
-  const results = await $.get(`/api/results?name=${name}`)
+  const results = await $.get(`/api/results?name=${name}&_=${new Date().getTime()}`)
   if (results) {
     $('#totalPlayers').text(results.total)
     createGlobalChart(results)
