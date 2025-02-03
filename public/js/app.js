@@ -438,12 +438,9 @@ function calculateFrequencies(data) {
 }
 
 function createGlobalChart(data) {
-  // Calculate frequencies
-  const frequencies = calculateFrequencies(data);
-
   // Find the min and max guesses
   const minGuess = 1
-  const maxGuess = Math.max(...Object.keys(frequencies).map(Number));
+  const maxGuess = Math.max(...Object.keys(data.numbers).map(Number));
 
   // Create an array for all integers between min and max
   const labels = [];
@@ -452,7 +449,7 @@ function createGlobalChart(data) {
   }
 
   // Map frequencies to the full range of labels, defaulting to 0 if not present
-  const values = labels.map(label => frequencies[label] || 0);
+  const values = labels.map(label => data.numbers[label] || 0);
 
   // Create the chart
   const ctx = document.getElementById('globalChart').getContext('2d');
@@ -494,25 +491,22 @@ function createGlobalChart(data) {
 async function setupGlobalChart(name) {
   const results = await $.get(`/api/results?name=${name}`)
   if (results) {
-    setMeanGuesses(results)
-    const filteredResults = results.filter(result => result.guesses !== null)
-    if (results.length > 0 && results.length - filteredResults.length > 0) {
-      $('#globalGiveUps').text(((results.length - filteredResults.length)/results.length).toFixed(2))
-    }
-    $('#totalPlayers').text(results.length)
-    createGlobalChart(filteredResults)
+    $('#totalPlayers').text(results.total)
+    createGlobalChart(results)
+    $("#meanGuesses").text(results.average)
+    $("#globalGiveUps").text(results.giveUpPercent)
   } else {
     $('#guessesChart').text('Unable to load global results')
   }
 }
 
-async function setMeanGuesses(data) {
-  const filteredData = data.filter(result => result.guesses!== null && result.guesses!== 1)
-  const total = filteredData.reduce((sum, obj) => sum + obj.guesses, 0)
-  const mean = total / filteredData.length
-  const roundedMean = parseFloat(mean.toFixed(1))
-  $("#meanGuesses").text(roundedMean)
-}
+// async function setMeanGuesses(data) {
+//   const filteredData = data.filter(result => result.guesses!== null && result.guesses!== 1)
+//   const total = filteredData.reduce((sum, obj) => sum + obj.guesses, 0)
+//   const mean = total / filteredData.length
+//   const roundedMean = parseFloat(mean.toFixed(1))
+//   $("#meanGuesses").text(roundedMean)
+// }
 
 async function handleGuesses(giveup) {
   showLoading()
