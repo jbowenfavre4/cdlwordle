@@ -26,18 +26,34 @@ const mysteryPlayerSchema = new mongoose.Schema({
 const Player = mongoose.model('Player', playerSchema)
 const MysteryPlayer = mongoose.model('MysteryPlayer', mysteryPlayerSchema)
 
-async function seedMysteryPlayers() {
+// Helper function to shuffle an array (Fisher-Yates algorithm)
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+}
 
+async function seedMysteryPlayers() {
     try {
         await mongoose.connect(dbString, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
 
-        const players = await Player.find({});
+        let players = await Player.find({});
+        if (players.length === 0) {
+            console.log("No players found!");
+            return;
+        }
+
         console.log("Fetched players");
 
-        for (let i = 0; i < 100; i++) {
+        // Shuffle players so they appear in random order
+        players = shuffle(players);
+
+        for (let i = 2; i < players.length + 2; i++) {
             // Calculate the target date at 08:00 UTC
             const currentDate = new Date(startDate);
             currentDate.setDate(currentDate.getDate() + i);
@@ -45,29 +61,26 @@ async function seedMysteryPlayers() {
                 currentDate.getUTCFullYear(),
                 currentDate.getUTCMonth(),
                 currentDate.getUTCDate(),
-                8, // 08:00 UTC
-                0, // Minutes
-                0, // Seconds
-                0  // Milliseconds
+                8, 0, 0, 0
             ));
 
-            // Pick a random player
-            const randomIndex = Math.floor(Math.random() * players.length);
-            const randomPlayer = players[randomIndex];
+            // Pick the next player in the shuffled order
+            const randomPlayer = players[i - 2];
 
             // Create and save the MysteryPlayer document
             const doc = new MysteryPlayer({
                 name: randomPlayer.name,
-                date: utcDateAtEight, // Use the 08:00 UTC date
+                date: utcDateAtEight,
                 id: randomPlayer._id
             });
             await doc.save();
 
             if (i % 10 === 0) {
-                console.log('Generated ', i, ' players');
+                console.log('Generated ', i, ' mystery players');
             }
         }
-        console.log("Generated 100 mystery players");
+
+        console.log("Finished generating unique mystery players!");
 
     } catch (e) {
         console.log("Error: ", e);
@@ -76,5 +89,4 @@ async function seedMysteryPlayers() {
     }
 }
 
-
-seedMysteryPlayers()
+seedMysteryPlayers();
