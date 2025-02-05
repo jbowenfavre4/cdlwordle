@@ -6,7 +6,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const playersRouter = require('./src/routes/playerRoutes')
 const resultsRouter = require("./src/routes/resultsRouter")
-const infiniteRouter = require("./src/routes/infiniteRoutes")
+// const infiniteRouter = require("./src/routes/infiniteRoutes")
 
 app.use(express.json())
 
@@ -50,7 +50,7 @@ app.get('/privacy-policy', (req, res) => {
 
 app.use('/api/players', playersRouter)
 app.use('/api/results', resultsRouter)
-app.use('/api/infinite', infiniteRouter)
+// app.use('/api/infinite', infiniteRouter)
 
 mongoose.connect(process.env.DB_STRING).then(() => {
   console.log("connected to DB")
