@@ -1,7 +1,6 @@
 const express = require("express")
 const Player = require("../models/playerModel")
-const Stint = require("../models/stintModel")
-const MysteryPlayer = require("../models/mysteryPlayerModel")
+const utilities = require("../utilities")
 const router = express.Router()
 require("dotenv").config()
 
@@ -24,21 +23,55 @@ router.get('/search', async (req, res) => {
     }
 })
 
+router.get('', async (req, res) => {
+    if (!req.query.player) {
+        return res.status(400).json({
+            message: "Player is required."
+        })
+    }
+    try {
+        const player = await Player.findOne({name: req.query.player})
+        if (player) {
+            const teams = await utilities.getTeams(player.name)
+            const teammates = await utilities.getTeammates(player.name)
+            return res.json({
+                name: player.name,
+                teams: teams,
+                nationality: player.nationality,
+                age: utilities.calculateAge(player.dob),
+                rings: player.rings,
+                wins: player.wins,
+                teammates: teammates,
+                age: utilities.calculateAge(player.dob)
+            })
+        } else {
+            return res.status(404).json({
+                message: "Player not found"
+            })
+        }
+        
+    } catch(e) {
+        return res.status(500).json({
+            message: `Unable to get player: ${e}`
+        })
+    }
+})
+
 router.post('/guess', async (req, res) => {
     if (req.body.giveup && req.body.giveup === true) {
-        const mysteryPlayer = await findTodaysPlayer()
+        const mysteryPlayer = await utilities.findTodaysPlayer()
         if (!mysteryPlayer) {
             return res.status(500).json({
                 message: "Server error. Please try again."
             })
         }
-        let mysteryTeammates = await getTeammates(mysteryPlayer.name)
-        const mysteryTeams = await getTeams(mysteryPlayer.name)
+        let mysteryTeammates = await utilities.getTeammates(mysteryPlayer.name)
+        const mysteryTeams = await utilities.getTeams(mysteryPlayer.name)
         return res.status(200).json({
             correct: true,
             gaveup: true,
             name: mysteryPlayer.name,
-            age: calculateAge(mysteryPlayer.dob),
+            age: utilities.calculateAge(mysteryPlayer.dob),
             nationality: mysteryPlayer.nationality,
             rings: mysteryPlayer.rings,
             wins: mysteryPlayer.wins,
@@ -60,23 +93,23 @@ router.post('/guess', async (req, res) => {
         })
     }
 
-    const mysteryPlayer = await findTodaysPlayer()
+    const mysteryPlayer = await utilities.findTodaysPlayer()
     if (!mysteryPlayer) {
         return res.status(500).json({
             message: "Server error. Please try again."
         })
     }
 
-    let mysteryTeammates = await getTeammates(mysteryPlayer.name)
-    const mysteryTeams = await getTeams(mysteryPlayer.name)
-    const guessedTeams = await getTeams(guessedPlayer.name)
+    let mysteryTeammates = await utilities.getTeammates(mysteryPlayer.name)
+    const mysteryTeams = await utilities.getTeams(mysteryPlayer.name)
+    const guessedTeams = await utilities.getTeams(guessedPlayer.name)
 
     if (mysteryPlayer._id.equals(guessedPlayer._id)) {
         return res.status(200).json({
             correct: true,
             gaveup: false,
             name: mysteryPlayer.name,
-            age: calculateAge(mysteryPlayer.dob),
+            age: utilities.calculateAge(mysteryPlayer.dob),
             nationality: mysteryPlayer.nationality,
             rings: mysteryPlayer.rings,
             wins: mysteryPlayer.wins,
@@ -99,9 +132,9 @@ router.post('/guess', async (req, res) => {
             correct: guessedPlayer.nationality == mysteryPlayer.nationality
         },
         age: {
-            value: calculateAge(guessedPlayer.dob),
-            correct: calculateAge(guessedPlayer.dob) == calculateAge(mysteryPlayer.dob),
-            over: calculateAge(guessedPlayer.dob) > calculateAge(mysteryPlayer.dob)
+            value: utilities.calculateAge(guessedPlayer.dob),
+            correct: utilities.calculateAge(guessedPlayer.dob) == utilities.calculateAge(mysteryPlayer.dob),
+            over: utilities.calculateAge(guessedPlayer.dob) > utilities.calculateAge(mysteryPlayer.dob)
         },
         rings: {
             value: guessedPlayer.rings,
@@ -120,111 +153,3 @@ router.post('/guess', async (req, res) => {
 })
 
 module.exports = router
-
-function wereTeammates(stint1, stint2) {
-    const stint1Left = stint1.left ? new Date(stint1.left) : new Date(); // Default to current date if null
-    const stint2Left = stint2.left ? new Date(stint2.left) : new Date(); // Default to current date if null
-  
-    return (
-      stint1.team === stint2.team && // Check if they were on the same team
-      new Date(stint1.joined) < stint2Left && // Check overlap condition
-      stint1Left > new Date(stint2.joined)
-    );
-}
-
-async function getTeammates(playerName) {
-    try {
-        const playerStints = await Stint.find({ name: playerName })
-        let teammates = []
-
-        for (let stint of playerStints) {
-            const stints = await Stint.find({ name: { $ne: playerName }, team: stint.team });
-            for (let compareStint of stints) {
-                if (wereTeammates(stint, compareStint)) {
-                    teammates.push(compareStint.name)
-                }
-            }
-        }
-        return teammates
-    } catch(e) {
-        console.error("error getting teammates: ", e)
-        return []
-    }
-    
-}
-
-async function getTeams(playerName) {
-    try {
-        const playerStints = await Stint.find({ name: playerName })
-        let teams = []
-        for (let stint of playerStints) {
-            if (!teams.includes(stint.team)) {
-                teams.push(stint.team)
-            }
-        }
-        return teams
-    } catch(e) {
-        console.error("error getting teams: ", e)
-        return []
-    }
-}
-
-async function findTodaysPlayer() {
-    try {
-        const now = new Date();
-
-        // Calculate the current time in PST
-        const pstOffset = -8; // PST is UTC-8 during standard time
-        const nowInPST = new Date(now.getTime() + pstOffset * 60 * 60 * 1000);
-
-        // Construct today's date at `08:00:00` UTC, based on PST
-        const targetDate = new Date(Date.UTC(
-            nowInPST.getUTCFullYear(),
-            nowInPST.getUTCMonth(),
-            nowInPST.getUTCDate(),
-            8, 0, 0 // 08:00:00 UTC
-        ));
-
-        // Query the database
-        const player = await MysteryPlayer.findOne({ date: targetDate });
-
-        if (!player) {
-            console.log('No player found with the specified time on today’s date.');
-            return null;
-        }
-
-        // Fetch player details
-        const playerInfo = await Player.findOne({ name: player.name });
-        if (!playerInfo) {
-            throw new Error('Mystery player not found.');
-        }
-
-        return playerInfo;
-    } catch (err) {
-        console.error('Error finding player:', err);
-        return null;
-    }
-}
-  
-  
-
-function calculateAge(dob) {
-    if (dob == null) {
-        return "Unknown"
-    }
-    const dobDate = new Date(dob); // Convert the DOB string to a Date object
-    const today = new Date(); // Get today's date
-  
-    let age = today.getFullYear() - dobDate.getFullYear(); // Calculate the difference in years
-  
-    // Adjust if the birthday hasn't occurred yet this year
-    const hasHadBirthday = 
-      today.getMonth() > dobDate.getMonth() || 
-      (today.getMonth() === dobDate.getMonth() && today.getDate() >= dobDate.getDate());
-      
-    if (!hasHadBirthday) {
-      age--;
-    }
-  
-    return age;
-}

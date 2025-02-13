@@ -29,6 +29,8 @@ $(document).ready(async () => {
     });
     if (hasMysteryPlayerChanged(initial_state.lastGuess)) {
       let clean_state = JSON.parse(JSON.stringify(CLEAN_STATE))
+      await localStorage.setItem("dailyCompleted", false)
+      // set unlimited button NOT visible here
       $(".guessCount").each(function () {
         const $el = $(this); // Convert to a jQuery object
         const currentCount = 0; // Safely parse the current count
@@ -39,6 +41,13 @@ $(document).ready(async () => {
       populateExistingGuesses(initial_state)
       setCorrectState(initial_state)
       setupGlobalChart(initial_state.name)
+      $("#unlimitedBtn").toggleClass("d-none")
+      $("#unlimitedBtn").on("click", async () => {
+        await startUnlimited()
+      })
+      $("#newUnlimitedBtn").on("click", async () => {
+        await startUnlimited()
+      })
     } else if (!initial_state.correct && !hasMysteryPlayerChanged(initial_state.lastGuess)) {
       populateExistingGuesses(initial_state)
     }
@@ -81,7 +90,7 @@ $(document).ready(async () => {
                 // let guesses = JSON.parse(localStorage.getItem("GAME_STATE")).guesses
                 let state = JSON.parse(localStorage.getItem("GAME_STATE"))
                 if (state && state.guesses) {
-                  if (!state.guesses.some(obj => obj.name === player.name)) {
+                  if (!state.guesses.some(obj => obj.name === player.name) || await localStorage.getItem("dailyCompleted") === "true") {
                     $('#guessPlayer').attr("disabled", false)
                   }
                 } else {
@@ -113,12 +122,12 @@ $(document).ready(async () => {
   });
 
   $('#giveUp').on('click', async (e) => {
-    handleGuesses(true)
+    await handleGuesses(true)
   })
 
 
   $('#guessPlayer').on('click', async (e) => {
-    handleGuesses(false)
+    await handleGuesses(false)
   })
 
   // hide dropdown when clicking outside
@@ -359,6 +368,23 @@ function populateSuccessModal(game_state) {
   createGuessesChart(guesses)
   
   $('#correctModalName').append(`<a href="https://cod-esports.fandom.com/wiki/${game_state.name}" target="_blank">${game_state.name}</a>`)
+}
+
+function populateInfiniteModal(infinite_state) {
+  console.log(infinite_state)
+  if (!infinite_state.giveup) {
+    console.log(infinite_state.guesses.length)
+    $("#giveUpInfiniteGuessCount").hide()
+    $("#infiniteGuessCount").show()
+    $("#guessCountInfiniteModal").text(infinite_state.guesses.length)
+  } else {
+    $("#infiniteGuessCount").hide()
+    $("#giveUpInfiniteGuessCountModal").text(infinite_state.guesses.length)
+    $("#giveUpInfiniteGuessCount").show()
+    console.log("HELLO")
+  }
+  $("#infiniteModalName").empty()
+  $("#infiniteModalName").append(`<a href="https://cod-esports.fandom.com/wiki/${infinite_state.name}" target="_blank">${infinite_state.name}</a>`)
 }
 
 function createGuessesChart(guessesRaw) {
@@ -660,6 +686,7 @@ async function handleGuesses(giveup) {
         }
         localStorage.setItem("GAME_STATE", JSON.stringify(game_state))
       } else {
+
         // guess is correct
         if (giveup) {
           game_state.gaveup = true
@@ -736,6 +763,10 @@ async function handleGuesses(giveup) {
           }
         )
         setupGlobalChart(response.name)
+
+        // mark daily completed in local storage
+        await localStorage.setItem("dailyCompleted", true)
+        $("#unlimitedBtn").toggleClass("d-none")
       }
     },
     error: (xhr, status, error) => {
@@ -744,4 +775,276 @@ async function handleGuesses(giveup) {
     },
   });
   hideLoading()
+}
+
+async function startUnlimited() {
+  showLoading()
+  console.log("Starting unlimited")
+  $("#unlimitedBtn").text("Unlimited Game In Progress")
+  $("#unlimitedBtn").attr("disabled", true)
+  $("#giveUp").off().on('click', async function() {
+    await handleUnlimitedGuess(true)
+  })
+  $("#giveUp").attr("disabled", false)
+  $("#guessPlayer").off().on('click', async function() {
+    await handleUnlimitedGuess(false)
+  })
+
+  await $.ajax({
+    url: "/api/infinite/start",
+    type: "POST",
+    contentType: "application/json",
+    success: async (response) => {
+      await localStorage.setItem("INFINITE_STATE", JSON.stringify({
+        name: response.name,
+        nationality: response.nationality,
+        dob: response.dob,
+        rings: response.rings,
+        wins: response.wins,
+        teams: response.teams,
+        teammates: response.teammates,
+        age: response.age,
+        guesses: [],
+        giveup: false
+      }))
+    },
+    error: (xhr, status, error) => {
+      console.error("Error: ", error)
+      hideLoading()
+    }
+  })
+  await resetUI()
+  hideLoading()
+}
+
+async function handleUnlimitedGuess(giveup) {
+  showLoading()
+  const name = $("#playerSearchBar").val()
+  $(".guessCount").each(function () {
+    const $el = $(this); // Convert to a jQuery object
+    const currentCount = parseInt($el.text(), 10) || 0; // Safely parse the current count
+    $el.text(currentCount + 1); // Update the text
+  });
+  if (!giveup) {
+    if (name == JSON.parse(await localStorage.getItem("INFINITE_STATE")).name) {
+      const infinite_state = JSON.parse(localStorage.getItem("INFINITE_STATE"))
+      infinite_state.guesses.push({correct: true})
+      // handle correct guess
+      $("#unlimitedBtn").attr("disabled", false)
+      $("#unlimitedBtn").text("Start New Game")
+      $("#guessPlayer").attr("disabled", true)
+      $("#giveUp").attr("disabled", true)
+      const myModal = new bootstrap.Modal(document.getElementById('infiniteModal'));
+  
+      $('#mysteryAge').text(infinite_state.age)
+      $('#ageSquare').css("background-color", "green")
+  
+      $('#mysteryNationality').text(infinite_state.nationality)
+      $('#nationalitySquare').css('background-color', 'green')
+  
+      $('#mysteryRings').text(infinite_state.rings)
+      $('#ringsSquare').css('background-color', 'green')
+  
+      $('#mysteryWins').text(infinite_state.wins)
+      $('#winsSquare').css('background-color', 'green')
+      
+      $('#mysteryTeammates').text('')
+      for (let teammate of infinite_state.teammates) {
+        $('#mysteryTeammates').append(`<p class="mb-0">${teammate}</p>`)
+      }
+      $('#teammatesSquare').css('background-color', 'green')
+      
+      $('#mysteryTeams').text('')
+      for (let team of infinite_state.teams) {
+        $('#mysteryTeams').append(`<p class="mb-0">${team}</p>`)
+      }
+      $('#teamsSquare').css('background-color', 'green')
+  
+      populateInfiniteModal(infinite_state)
+      let body = {
+        player: infinite_state.name,
+        guesses: infinite_state.guesses.length,
+        giveup: false
+      };
+      
+      await $.ajax({
+        url: "/api/infinite/finish",
+        data: JSON.stringify(body), // Only stringify once
+        type: "POST",
+        contentType: "application/json" // Correct spelling
+      });
+      const history = await $.get(`/api/infinite/results?player=${infinite_state.name}`)
+      $("#meanInfiniteGuesses").text(history.average)
+      $("#globalGiveUpsInfinite").text(history.giveUpPercentage)
+  
+    // Show the modal
+      myModal.show();
+      hideLoading()
+  
+    } else {
+      // incorrect guess
+      const mysteryData = await JSON.parse(localStorage.getItem("INFINITE_STATE"))
+      const guess = await $.get(`/api/players?player=${name}`)
+      console.log(mysteryData)
+      mysteryData.guesses.push(guess)
+      if (guess) {
+        if (guess.nationality == mysteryData.nationality) {
+          $('#mysteryNationality').text(guess.nationality)
+          $('#nationalitySquare').css('background-color', 'green')
+        }
+        if (guess.age == mysteryData.age) {
+          $('#mysteryAge').text(guess.age)
+          $('#ageSquare').css("background-color", "green")
+        }
+        if (guess.rings == mysteryData.rings) {
+          $('#mysteryRings').text(guess.rings)
+          $('#ringsSquare').css('background-color', 'green')
+        }
+        if (guess.wins == mysteryData.wins) {
+          $('#mysteryWins').text(guess.wins)
+          $('#winsSquare').css('background-color', 'green')
+        }
+        if (guess.teammates.includes(mysteryData.name)) {
+          if ($('#mysteryTeammates').text() == "?") {
+            $('#mysteryTeammates').text('')
+          }
+          if (!containsString($('#teammatesSquare'), guess.name)) {
+            $('#mysteryTeammates').append(`<p class="mb-0">${guess.name}</p>`)
+            $('#teammatesSquare').css('background-color', '#FFC107')
+          }
+        }
+        for (let team of guess.teams) {
+          if (mysteryData.teams.includes(team)) {
+            if ($('#mysteryTeams').text() == "?") {
+              $('#mysteryTeams').text('')
+            }
+            if (!containsString($('#teamsSquare'), team)) {
+              $('#mysteryTeams').append(`<p class="mb-0">${team}</p>`)
+              $('#teamsSquare').css('background-color', '#FFC107')
+            }
+          }
+        }
+  
+        let teamsString = ""
+        for (let team of guess.teams) {
+          teamsString += `
+            <ul class="p-0 m-1">
+              <p class="table-cell ${mysteryData.teams.includes(team) ? 'match' : ''}">${team}</p>
+            </ul>
+          `
+        }
+  
+        const newRow = $('<tr>');
+          newRow.append(`<td class="align-content-center">${guess.name}</td>`);
+          newRow.append(`<td class="align-content-center">
+            ${
+              guess.nationality == mysteryData.nationality ?
+              `<p class="table-cell match">${guess.nationality}</p>` :
+              `<p class="table-cell">${guess.nationality}`
+            }</td>`);
+          newRow.append(`<td class="align-content-center">
+            ${
+              guess.age == mysteryData.age ? 
+              `<p class="table-cell match">${guess.age}</p>` : 
+              `<p class="table-cell">
+                ${guess.age}
+                ${guess.age > mysteryData.age ? 
+                `<i class="fa-solid fa-arrow-down"></i> `:
+                `<i class="fa-solid fa-arrow-up"></i>`
+                }
+              </p>`
+            }</td>`);
+          newRow.append(`<td class="align-content-center">
+            ${
+              guess.wins == mysteryData.wins ?
+              `<p class="table-cell match">${guess.wins}</p>` :
+              `<p class="table-cell">
+                ${guess.wins}
+                ${guess.wins > mysteryData.wins ? 
+                `<i class="fa-solid fa-arrow-down"></i> `:
+                `<i class="fa-solid fa-arrow-up"></i>`
+                }
+              </p>`
+            }</td>`);
+          newRow.append(`<td class="align-content-center">
+            ${
+              guess.rings == mysteryData.rings ?
+              `<p class="table-cell match">${guess.rings}</p>` :
+              `<p class="table-cell">
+                ${guess.rings}
+                ${guess.rings > mysteryData.rings ? 
+                `<i class="fa-solid fa-arrow-down"></i> `:
+                `<i class="fa-solid fa-arrow-up"></i>`
+                }
+              </p>`
+            }</td>`);
+          newRow.append(`<td class="align-content-center">${teamsString}</td>`);
+          newRow.append(`<td class="align-content-center">${
+            guess.teammates.includes(mysteryData.name) ? 
+            `<i class="fa-solid fa-check table-cell match"></i>` : 
+            '<i class="fa-solid fa-xmark px-1"></i>'
+          }</td>`);
+          $('#guessesTableBody').prepend(newRow);
+  
+          await localStorage.setItem("INFINITE_STATE", JSON.stringify(mysteryData))
+          hideLoading()
+          
+      }
+    }
+  } else {
+    // giveup logic
+    
+    const infinite_state = JSON.parse(localStorage.getItem("INFINITE_STATE"))
+    infinite_state.guesses.push({correct: true})
+    infinite_state.giveup = true
+    populateInfiniteModal(infinite_state)
+    const myModal = new bootstrap.Modal(document.getElementById('infiniteModal'));
+    let body = {
+      player: infinite_state.name,
+      guesses: infinite_state.guesses.length,
+      giveup: true
+    };
+    await $.ajax({
+      url: "/api/infinite/finish",
+      data: JSON.stringify(body), // Only stringify once
+      type: "POST",
+      contentType: "application/json" // Correct spelling
+    });
+    const history = await $.get(`/api/infinite/results?player=${infinite_state.name}`)
+    $("#meanInfiniteGuesses").text(history.average)
+    $("#globalGiveUpsInfinite").text(history.giveUpPercentage)
+    myModal.show()
+    hideLoading()
+  }
+  
+}
+
+async function resetUI() {
+  console.log("resetting ui for unlimited mode")
+  $("#guessesTableBody").empty()
+  $("#playerSearchBar").attr("disabled", false)
+  $("#correctMessage").hide()
+  $("#giveUpMessage").hide()
+
+  $('#mysteryAge').text("?")
+  $('#ageSquare').css("background-color", "rgba(255, 255, 255, 0.2)")
+
+  $('#mysteryNationality').text("?")
+  $('#nationalitySquare').css('background-color', 'rgba(255, 255, 255, 0.2)')
+
+  $('#mysteryRings').text("?")
+  $('#ringsSquare').css('background-color', 'rgba(255, 255, 255, 0.2)')
+
+  $('#mysteryWins').text("?")
+  $('#winsSquare').css('background-color', 'rgba(255, 255, 255, 0.2)')
+  
+  $('#mysteryTeammates').text('?')
+  $('#teammatesSquare').css('background-color', 'rgba(255, 255, 255, 0.2)')
+  
+  $('#mysteryTeams').text('?')
+  $('#teamsSquare').css('background-color', 'rgba(255, 255, 255, 0.2)')
+
+  $("#guessMessage").removeClass("d-none")
+  $(".guessCount").text("0")
+
 }

@@ -64,7 +64,6 @@ router.get("/", async (req, res) => {
         let numbers = {}
 
         if (results.length > 0) {
-            console.log("hey")
             const filteredResults = results.filter(result => result.guesses !== null)
             if (results.length > 0 && results.length - filteredResults.length > 0) {
                 giveupPercent = (((results.length - filteredResults.length)/results.length)*100).toFixed(2)
