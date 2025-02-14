@@ -16,6 +16,7 @@ router.get('/search', async (req, res) => {
         
         res.json(players)
     } catch(e) {
+        console.log(req)
         console.error('Error fetching playeres: ', e)
         res.status(500).json({
             error: 'Server error, please try again.'

@@ -28,6 +28,13 @@ $(document).ready(async () => {
     })
   })
 
+  $("#unlimitedBtn").on("click", async () => {
+    await startUnlimited()
+  })
+  $("#newUnlimitedBtn").on("click", async () => {
+    await startUnlimited()
+  })
+
   $("#xShare").on("click", async () => {
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(await getResultsToShare())}`, "_blank")
   })
@@ -54,15 +61,6 @@ $(document).ready(async () => {
       setCorrectState(initial_state)
       setupGlobalChart(initial_state.name)
       $("#unlimitedBtn").toggleClass("d-none")
-      $("#unlimitedBtn").on("click", async () => {
-        await startUnlimited()
-      })
-      $("#newUnlimitedBtn").on("click", async () => {
-        await startUnlimited()
-      })
-
-      //REMOVE 
-      await getResultsToShare()
     } else if (!initial_state.correct && !hasMysteryPlayerChanged(initial_state.lastGuess)) {
       populateExistingGuesses(initial_state)
     }
@@ -77,6 +75,10 @@ $(document).ready(async () => {
 
   $('#help').on('click', (e) => {
     new bootstrap.Modal(document.getElementById('helpModal')).show();
+  })
+
+  $('#news').on("click", (e) => {
+    new bootstrap.Modal(document.getElementById('whatsNew')).show()
   })
 
   let debounceTimer; // Timer reference for debouncing
@@ -386,9 +388,7 @@ function populateSuccessModal(game_state) {
 }
 
 function populateInfiniteModal(infinite_state) {
-  console.log(infinite_state)
   if (!infinite_state.giveup) {
-    console.log(infinite_state.guesses.length)
     $("#giveUpInfiniteGuessCount").hide()
     $("#infiniteGuessCount").show()
     $("#guessCountInfiniteModal").text(infinite_state.guesses.length)
@@ -396,7 +396,6 @@ function populateInfiniteModal(infinite_state) {
     $("#infiniteGuessCount").hide()
     $("#giveUpInfiniteGuessCountModal").text(infinite_state.guesses.length)
     $("#giveUpInfiniteGuessCount").show()
-    console.log("HELLO")
   }
   $("#infiniteModalName").empty()
   $("#infiniteModalName").append(`<a href="https://cod-esports.fandom.com/wiki/${infinite_state.name}" target="_blank">${infinite_state.name}</a>`)
@@ -790,7 +789,6 @@ async function handleGuesses(giveup) {
 
 async function startUnlimited() {
   showLoading()
-  console.log("Starting unlimited")
   $("#unlimitedBtn").text("Unlimited Game In Progress")
   $("#unlimitedBtn").attr("disabled", true)
   $("#giveUp").off().on('click', async function() {
@@ -896,7 +894,6 @@ async function handleUnlimitedGuess(giveup) {
       // incorrect guess
       const mysteryData = await JSON.parse(localStorage.getItem("INFINITE_STATE"))
       const guess = await $.get(`/api/players?player=${name}`)
-      console.log(mysteryData)
       mysteryData.guesses.push(guess)
       if (guess) {
         if (guess.nationality == mysteryData.nationality) {
@@ -1031,7 +1028,6 @@ async function handleUnlimitedGuess(giveup) {
 }
 
 async function resetUI() {
-  console.log("resetting ui for unlimited mode")
   $("#guessesTableBody").empty()
   $("#playerSearchBar").attr("disabled", false)
   $("#correctMessage").hide()

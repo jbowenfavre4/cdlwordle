@@ -73,32 +73,6 @@ router.get('/results', async (req, res) => {
     }
 })
 
-// router.post('/guess', async (req, res) => {
-//     if (!req.body.player || !req.body.guess) {
-//         res.status(400).json({
-//             message: "Player and Guess required."
-//         })
-//     }
-//     const guess = await Player.find({
-//         name: req.body.guess
-//     })
-//     const player = await Player.find({
-//         name: req.body.player
-//     })
-//     if (guess && player) {
-//         const mysteryTeammates = await utilities.getTeammages(player.name)
-//         console.log(mysteryTeammates)
-//         const mysteryTeams = await utilities.getTeams(player.name)
-//         const guessedTeams = await utilities.getTeams(guess.name)
-
-//     } else {
-//         res.status(400).json({
-//             message: "Player or guess not found."
-//         })
-//     }
-
-// })
-
 async function getRandomPlayer() {
     try {
         const randomPlayer = await Player.aggregate([{ $sample: { size: 1 } }]);
