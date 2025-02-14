@@ -296,6 +296,19 @@
                         <h2 id="correctModalName"style="color: green"></h2>
                         <p id="successGuessCount" class="d-none">You got it in <span id="guessCountModal"></span> tries. Come back tomorrow for a new game.</p>
                         <p id="giveUpGuessCount" class="d-none">You gave up after <span id="giveUpGuessCountModal"></span> guesses. Come back tomorrow for a new game.</p>
+                        <div class="row justify-content-center mt-3">
+                            <div class="col-auto">
+                                <button class="btn btn-outline-primary d-flex align-items-center gap-2" id="shareButton">
+                                    <i class="fa-solid fa-copy"></i> Copy Results
+                                </button>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-outline-primary line-primary d-flex align-items-center gap-2" id="xShare">
+                                    Share to <i class="fa-brands fa-x-twitter"></i> 
+                                </button>
+                            </div>
+                        </div>
+                        
                         <h4 class="mt-4">Today's Game Global Stats</h4>
                         <p class="mb-0"> Total players today: <span id="totalPlayers" style="font-weight: bold; color: green"></span></p>
                         <p class="mb-0"> Today's average score: <span id="meanGuesses" style="font-weight: bold; color: green"></span> guesses</p>
@@ -356,6 +369,46 @@
                         <h4 class="mb-0">Average for this player: <span id="meanInfiniteGuesses" style="font-weight: bold; color: green"></span> guesses</h4>
                         <h4>Give up percentage: <span id="globalGiveUpsInfinite" style="font-weight: bold;">0</span><span style="font-weight: bold;">%</span></h4>
                         <button class="btn" id="newUnlimitedBtn" style="background-color: green; color: white" data-bs-dismiss="modal">New Game</button>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="whatsNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content bg-dark text-light border-0">
+                    <!-- Modal Header -->
+                    <div class="modal-header justify-content-center border-0">
+                        <h2 class="modal-title">What's New?</h2>
+                        <button type="button" class="btn-close btn-close-white position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+        
+                    <!-- Modal Body -->
+                    <div class="modal-body text-justify">
+                        <p style="text-align: justify">With the game becoming more popular, I've implemented several features over the last couple of weeks to improve the experience:</p>
+                        <ul>
+                            <li style="text-align: justify">
+                                Added unlimited mode. After you complete the daily game, you can click the 'Start Unlimited' button to keep playing. Each game is completely random and you can give up if you need to. If you want to exit unlimited mode you can reload the page.
+                            </li>
+                            <li style="text-align: justify">
+                                Added sharing. In the results popup that shows after completing the daily game, there is a link to share your results. You can copy them to paste anywhere or you can click the X link to open up a new tweet with the results.
+                            </li>
+                            <li style="text-align: justify">
+                                Added additional statistics to the results popup.
+                            </li>
+                            <li style="text-align: justify">
+                                Added a give up button available for the daily game after you have made 8 guesses, and always available in unlimited mode
+                            </li>
+                            <li style="text-align: justify">
+                                A bunch of other small bug fixes
+                            </li>
+                        </ul>
+                        <h4>Feedback</h4>
+                        <p style="text-align: justify">I am pretty much finished with all the major plans I had for the game. If you have any ideas that you would like to see implemented, find any bugs, or have any other feedback, you can reach out to me via discord or twitter (links at the bottom of the site). I hope you enjoy and thank you very much for playing.</p>
+                        <p>Diz</p>
+                        <a class="me-2" href="https://x.com/d1zzzz_" style="color: inherit"><i class="fa-brands social-icon fa-x-twitter"></i></a>
+                        <a class="ms-2 me-2" href="https://discord.gg/GNMUjWSmmy" style="color: inherit"><i class="fa-brands social-icon fa-discord"></i></a>
+                        <a class="ms-2" href="https://buymeacoffee.com/dizzzz" style="color: inherit"><i class="fa-solid social-icon fa-hand-holding-dollar"></i></a>
                     </div>
                 </div>
             </div>

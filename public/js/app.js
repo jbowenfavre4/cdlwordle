@@ -20,6 +20,18 @@ $(document).ready(async () => {
     new bootstrap.Modal(document.getElementById('helpModal')).show();
   }
 
+  new bootstrap.Modal(document.getElementById("whatsNew")).show()
+
+  $("#shareButton").on("click", async () => {
+    navigator.clipboard.writeText(await getResultsToShare()).then(() => {
+      alert("Results copied!")
+    })
+  })
+
+  $("#xShare").on("click", async () => {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(await getResultsToShare())}`, "_blank")
+  })
+
   let initial_state = JSON.parse(localStorage.getItem("GAME_STATE"))
   if (initial_state) {
     $(".guessCount").each(function () {
@@ -48,6 +60,9 @@ $(document).ready(async () => {
       $("#newUnlimitedBtn").on("click", async () => {
         await startUnlimited()
       })
+
+      //REMOVE 
+      await getResultsToShare()
     } else if (!initial_state.correct && !hasMysteryPlayerChanged(initial_state.lastGuess)) {
       populateExistingGuesses(initial_state)
     }
@@ -1042,5 +1057,89 @@ async function resetUI() {
 
   $("#guessMessage").removeClass("d-none")
   $(".guessCount").text("0")
+
+}
+
+function getFormattedDate() {
+  const today = new Date();
+  const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+  const day = String(today.getDate()).padStart(2, '0');
+  const year = today.getFullYear();
+  
+  return `${month}/${day}/${year}`;
+}
+
+async function getResultsToShare() {
+  const green =  "\u{1F7E9}"
+  const yellow = "\u{1F7E8}"
+  const black = "\u{2B1B}"
+  const up = "\u{1F53C}"
+  const down = "\u{1F53D}"
+  const check = "\u{2705}"
+  const ex = "\u{274C}"
+  let state = await JSON.parse(localStorage.getItem("GAME_STATE"))
+  let guesses = state.guesses
+  let text = `CDL Wordle ${getFormattedDate()}\ncdlwordle.me\n\u{1F30D}\u{1F382}\u{1F3C6}\u{1F48D}\u{1F530}\u{1F465}\n`
+  guesses = guesses.reverse()
+  for (let guess of guesses) {
+    let line = ""
+    if (!guess.correct) {
+      if (guess.nationality.correct) {
+        line += green
+      } else {
+        line += black
+      }
+  
+      if (guess.age.correct) {
+        line += green
+      } else if (guess.age.over) {
+        line += down
+      } else {
+        line += up
+      }
+  
+      if (guess.wins.correct) {
+        line += green
+      } else if (guess.wins.over) {
+        line += down
+      } else {
+        line += up
+      }
+  
+      if (guess.rings.correct) {
+        line += green
+      } else if (guess.rings.over) {
+        line += down
+      } else {
+        line += up
+      }
+  
+      if (guess.teams.length > 0) {
+        line += yellow
+      } else {
+        line += black
+      }
+  
+      if (guess.teammates) {
+        line += check
+      } else {
+        line += ex
+      }
+      line += '\n'
+    } else {
+      line = `${green}${green}${green}${green}${green}${green}\n`
+    }
+    
+
+    text += line
+  }
+
+  if (state.gaveup) {
+    text += `Gave up after ${guesses.length} tries`
+  } else {
+    text += `Guessed in ${guesses.length} tries`
+  }
+
+  return text
 
 }
