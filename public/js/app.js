@@ -746,10 +746,6 @@ async function handleGuesses(giveup) {
         } else {
           $("#correctMessage").removeClass('d-none')
         }
-        $('#mysteryName').text(response.name)
-        $('#mysteryNameGiveUp').text(response.name)
-        $("#mysteryNameGiveUp").append(`<a href="https://cod-esports.fandom.com/wiki/${game_state.name}" target="_blank">${game_state.name}</a>`)
-        $("#mysteryName").append(`<a href="https://cod-esports.fandom.com/wiki/${game_state.name}" target="_blank">${game_state.name}</a>`)
       
         // save results
         await $.ajax({
