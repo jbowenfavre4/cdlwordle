@@ -7,6 +7,37 @@ const mongoose = require('mongoose');
 const playersRouter = require('./src/routes/playerRoutes')
 const resultsRouter = require("./src/routes/resultsRouter")
 const infiniteRouter = require("./src/routes/infiniteRoutes")
+const cron = require('node-cron')
+const grid = require("./src/grid")
+const GridPuzzle = require("./src/models/gridModel")
+
+// generate puzzle for next day
+cron.schedule('0 7 * * *', async () => {
+  console.log("Generating puzzle")
+  try {
+    const newGrid = await grid(); // Get the generated puzzle data
+
+    const tomorrow = new Date();
+    tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+    tomorrow.setUTCHours(8, 0, 0, 0); // Set date to next day's 08:00 UTC
+
+    const updatedPuzzle = await GridPuzzle.findOneAndUpdate(
+      { date: tomorrow }, // Search for existing puzzle with this date
+      { 
+        rows: newGrid.rows, 
+        cols: newGrid.cols, 
+        answers: newGrid.answers,
+        createdAt: new Date() // Update creation timestamp
+      },
+      { upsert: true, new: true, setDefaultsOnInsert: true }
+    );
+
+    console.log("Puzzle set for:", updatedPuzzle.date);
+  } catch (e) {
+    console.error("Error generating puzzle:", e);
+  }
+})
+
 
 app.use(express.json())
 

@@ -25,6 +25,7 @@
     "jquery": "^3.7.1",
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.2",
+    "node-cron": "^3.0.3",
     "puppeteer": "^23.10.4"
   }
 }
