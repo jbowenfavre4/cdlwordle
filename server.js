@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const playersRouter = require('./src/routes/playerRoutes')
 const resultsRouter = require("./src/routes/resultsRouter")
 const infiniteRouter = require("./src/routes/infiniteRoutes")
+const gridRouter = require("./src/routes/gridRoutes")
 const cron = require('node-cron')
 const grid = require("./src/grid")
 const GridPuzzle = require("./src/models/gridModel")
@@ -82,6 +83,7 @@ app.get('/privacy-policy', (req, res) => {
 app.use('/api/players', playersRouter)
 app.use('/api/results', resultsRouter)
 app.use('/api/infinite', infiniteRouter)
+app.use('/api/gridlock', gridRouter)
 
 mongoose.connect(process.env.DB_STRING).then(() => {
   console.log("connected to DB")
