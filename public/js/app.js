@@ -18,9 +18,9 @@ $(document).ready(async () => {
   if (!seen_help_modal) {
     localStorage.setItem('seen_help_modal', 'true')
     new bootstrap.Modal(document.getElementById('helpModal')).show();
+  } else if (!localStorage.getItem("dailyCompleted")) {
+    new bootstrap.Modal(document.getElementById("whatsNew")).show()
   }
-
-  new bootstrap.Modal(document.getElementById("whatsNew")).show()
 
   $("#shareButton").on("click", async () => {
     navigator.clipboard.writeText(await getResultsToShare()).then(() => {

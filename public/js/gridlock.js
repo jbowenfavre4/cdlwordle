@@ -40,16 +40,19 @@ $(document).ready(async () => {
         });
 
         hideLoading();
-        console.log(existingGrid)
+
+        if (existingState && !existingState.done) {
+            new bootstrap.Modal(document.getElementById("gridlockModal")).show()
+        } else if (!existingState) {
+            new bootstrap.Modal(document.getElementById("gridlockModal")).show()
+        }
 
         if (!existingGrid || puzzleData._id != existingGrid._id) {
             await localStorage.setItem("GRID", JSON.stringify(puzzleData))
             await localStorage.setItem("GRID_STATE", JSON.stringify(CLEAN_STATE))
-            new bootstrap.Modal(document.getElementById("gridlockModal")).show()
         } else {
             for (let i = 0; i < 9; i++) {
                 if (existingState.squares[i] != "") {
-                    console.log(existingState.squares[i])
                     $(`#cell-${i}`).text(existingState.squares[i])
                     $(`#cell-${i}`).css("background", "green")
                 }
@@ -133,7 +136,6 @@ $(document).ready(async () => {
         }
         
         if (!existingState) {
-            console.log("penis")
             await localStorage.setItem("GRID_STATE", JSON.stringify(CLEAN_STATE))
         }
     } catch (error) {
@@ -151,7 +153,6 @@ $(document).ready(async () => {
     $("#shareBtn").on("click", async () => {
         new bootstrap.Modal(document.getElementById("shareModal")).show()
         const results = await copyResults()
-        console.log(getEmojisOnly(results))
         $("#resultsEmojis").html(await getEmojisOnly(results))
         $("#resultsString").text(results)
         $("#copyResultsBtn").on("click", () => {
@@ -254,7 +255,6 @@ $(document).ready(async () => {
             setGuessesRemaining(state.guesses)
             // check guess correct
             if (grid.answers[parseInt(square)].includes(guessedPlayer)){
-                console.log('Player guessed correctly.')
                 // update grid state
                 state.correct_guesses.push(guessedPlayer)
                 state.squares[parseInt(square)] = guessedPlayer
@@ -288,7 +288,6 @@ $(document).ready(async () => {
 
 async function setCompleteState(state) {
     const grid = JSON.parse(await localStorage.getItem("GRID"))
-    console.log("GAME OVER")
     // populate stats modal
 
 
@@ -341,7 +340,6 @@ async function setCompleteState(state) {
 }
 
 function sortTableByColumn(tableId, columnIndex, ascending = true) {
-    console.log("sorting table")
     const $table = $(`#${tableId}`);
     const $tbody = $table.find("tbody");
     const $rows = $tbody.find("tr").toArray();
