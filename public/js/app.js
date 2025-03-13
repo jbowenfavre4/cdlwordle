@@ -28,6 +28,10 @@ $(document).ready(async () => {
     })
   })
 
+  $("#gridlock").on("click", () => {
+    window.location.href = "/gridlock"
+  })
+
   $("#unlimitedBtn").on("click", async () => {
     await startUnlimited()
   })

@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
         })
     } catch(e) {
         console.error('Error saving result: ', e)
-        res.status(500).json({
+        return res.status(500).json({
             error: 'Server error, please try again.'
         })
     }

@@ -80,6 +80,10 @@ app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'privacy-policy.html'));
 });
 
+app.get('/gridlock', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'gridlock.html'))
+})
+
 app.use('/api/players', playersRouter)
 app.use('/api/results', resultsRouter)
 app.use('/api/infinite', infiniteRouter)

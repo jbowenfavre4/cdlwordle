@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSHNWWQN0C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FSHNWWQN0C');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7152769611869897">
+    <title>CDL Gridlock</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a6e9d4678d.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Ensure the body and html stretch to the full height of the viewport */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Push the footer to the bottom */
+        .content {
+            flex-grow: 1;
+        }
+
+        footer {
+            margin-top: auto; /* Ensures footer stays at the bottom */
+        }
+
+        body {
+            padding-top: 36px;
+        }
+
+        .info-square {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background-color 0.5s ease;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .info-square p {
+            margin-bottom: 10px;
+        }
+
+        .info-square .content {
+            font-weight: bold;
+        }
+
+        #playerDropdown {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            width: calc(100% - 60px);
+            z-index: 1050;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #212529;
+            border-radius: 0.375rem;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            white-space: nowrap;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-control {
+            border-radius: 0.5rem;
+        }
+
+        .table-cell {
+            display: inline;
+            border-radius: 5px;
+            padding: 3px;
+        }
+
+        .match {
+            background-color: green;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .info-square::-webkit-scrollbar {
+            width: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #mysteryName {
+            font-weight: bolder;
+            color: green;
+        }
+
+        .info-square::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .info-square::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1050;
+        }
+
+        .btn-primary {
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
+
+        .ad-container {
+            display: flex;
+            justify-content: center;  /* Centers horizontally */
+            align-items: center;      /* Centers vertically (optional) */
+            width: 100%;
+            height: 60px; /* Adjust height if needed */
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: inherit;
+            transition: color 0.2s ease-in-out
+        }
+
+        .social-icon:hover {
+            color: #666
+        }
+
+        .grid-label,
+        .grid-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .grid-label {
+            font-size: clamp(0.25rem, 3vw, 1rem); /* Ensures labels shrink first */
+            min-height: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis; /* Adds "..." if text is too long */
+        }
+
+        .grid-cell {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background-color 0.5s ease;
+            max-height: 150px;
+            overflow-y: auto;
+            font-size: clamp(1rem, 4vw, 2rem); /* Ensures grid cells do not shrink before labels */
+        }
+
+        .grid-cell:hover {
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+
+        .flag-icon {
+            width: 80px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap; /* Prevents columns from wrapping */
+            justify-content: center; /* Ensures columns stay aligned */
+        }
+
+        .mock-square {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background-color 0.5s ease;
+            font-size: clamp(.05rem, 4vw, 1rem);
+            
+            /* Ensure squares take up all available space within their column */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .col-4 {
+            flex: 1; /* Ensures equal column width */
+            max-width: 33.33%; /* Ensures three columns per row */
+        }
+
+    </style>
+</head>
+<body class="bg-dark">
+    <!-- Loading icon -->
+    <div id="loadingOverlay" class="loading-overlay d-none">
+        <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container text-light text-center content">
+        <!-- Title Row -->
+        <div class="row justify-content-center mb-2">
+            <div class="col-auto text-center align-content-center" id="returnToWordle"><i class="fa-solid fa-rotate-left"></i></div>
+            <div class="col-auto text-center"><h1>CDL Gridlock</h1></div>
+            <div class="col-auto align-content-center" id="help"><i class="fa-solid fa-circle-question"></i></div>
+        </div>
+
+        <div class="grid-table">
+            <div class="row">
+                <div class="col grid-label"></div>
+                <div class="col grid-label align-content-center" id="col-0"></div>
+                <div class="col grid-label align-content-center" id="col-1"></div>
+                <div class="col grid-label align-content-center" id="col-2"></div>
+            </div>
+            <div class="row">
+                <div class="col grid-label align-content-center" id="row-0"></div>
+                <div class="col grid-cell" id="cell-0"></div>
+                <div class="col grid-cell" id="cell-1"></div>
+                <div class="col grid-cell" id="cell-2"></div>
+            </div>
+            <div class="row">
+                <div class="col grid-label align-content-center" id="row-1"></div>
+                <div class="col grid-cell" id="cell-3"></div>
+                <div class="col grid-cell" id="cell-4"></div>
+                <div class="col grid-cell" id="cell-5"></div>
+            </div>
+            <div class="row">
+                <div class="col grid-label align-content-center" id="row-2"></div>
+                <div class="col grid-cell" id="cell-6"></div>
+                <div class="col grid-cell" id="cell-7"></div>
+                <div class="col grid-cell" id="cell-8"></div>
+
+            </div>
+        </div>
+        <div class="row mt-3" id="guessesRemainingDiv">
+            <h4>Guesses left: <span id="guessesRemaining">10</span></h4>
+        </div>
+        <div class="row mt-3">
+            <h4 id="gameOverText"></h4>
+        </div>
+        <div class="row mt-3 justify-content-center d-none" id="btnRow">
+            <div class="col-auto">
+                <button class="btn btn-primary" id="statsBtn">View Stats  <i class="fa-solid fa-square-poll-vertical"></i></button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary" id="shareBtn">Share Results <i class="fa-solid fa-share-nodes"></i></button>
+            </div>
+        </div>
+
+    </div>
+        
+    <div class="modal fade" id="gridlockModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark text-light border-0">
+                <!-- Modal Header -->
+                <div class="modal-header justify-content-center border-0">
+                    <h2 class="modal-title">CDL Gridlock Beta</h2>
+                    <button type="button" class="btn-close btn-close-white position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+    
+                <!-- Modal Body -->
+                <div class="modal-body text-justify">
+                    <p style="text-align: justify">This is a new and more challenging version of CDL Wordle. The goal of the game is to fill each square of the grid with a player that satisifies both the column requirement and the row requirement for the given square. You have 10 guesses, one for each square plus one free guess. Once you have correctly filled a square, you cannot use that player again in the grid that day.</p>
+                    <p style="text-align: justify">This gamemode follows many of the same constraints as CDL Wordle:</p>
+                    <ul>
+                        <li>Only players that played in the CDL era are included. Only teammates in the CDL era are counted.</li>
+                        <li>Wins and rings from before the CDL are included.</li>
+                        <li>Coaches do not count, but substitutes do.</li>
+                    </ul>
+                    <p>This gamemode is brand new and in beta. The puzzles are generated programatically. Each puzzle will be solvable and there shouldn't be any repeated criteria on the same grid. Please reach out to me on X or Discord to report any bugs or feedback.</p>
+                    <p style="text-align: justify">I want to thank all of you for playing my game. If you would like to show support, please follow me on X, and if you are feeling generous you can donate<a class="ms-2" href="https://buymeacoffee.com/dizzzz" target="_blank" style="color: inherit">here</a>.</p>
+                    <p style="text-align: center;">Diz</p>
+                    <div style="text-align: center;">
+                        <a class="me-2" href="https://x.com/d1zzzz_" target="_blank" style="color: inherit"><i class="fa-brands social-icon fa-x-twitter"></i></a>
+                        <a class="ms-2 me-2" href="https://discord.gg/GNMUjWSmmy" target="_blank" style="color: inherit"><i class="fa-brands social-icon fa-discord"></i></a>
+                        <a class="ms-2" href="https://buymeacoffee.com/dizzzz" target="_blank" style="color: inherit"><i class="fa-solid social-icon fa-hand-holding-dollar"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="playerSearchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark text-light border-0">
+                <!-- Modal Header -->
+                <div class="modal-header justify-content-center border-0">
+                    <h4 class="modal-title">Search for a player</h4>
+                    <button type="button" class="btn-close btn-close-white position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-justify">
+                    <div class="row g-2 align-items-center justify-content-center">
+                        <div class="col-12 col-md-8 position-relative">
+                            <div class="d-flex">
+                                <input type="text" class="form-control bg-dark text-light me-2" id="playerSearchBar" placeholder="Search players..." autocomplete="off">
+                                <button class="btn btn-primary me-2" id="guessPlayer" disabled>Guess</button>
+                            </div>
+                            <div class="dropdown-menu w-100" id="playerDropdown"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="generalStatsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark text-light border-0">
+                <!-- Modal Header -->
+                <div class="modal-header justify-content-center border-0">
+                    <h2 class="modal-title">Stats</h2>
+                    <button type="button" class="btn-close btn-close-white position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-justify">
+                    <div class="row justify-content-center text-center mb-3">
+                        <h4>You got <span id="correctSquares"></span> answers correct.</h4>
+                    </div>
+                    <div class="row justify-content-center text-center mb-2">
+                        <h4>Global Stats</h4>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-4 mock-square" id="mock-0"></div>
+                        <div class="col-4 mock-square" id="mock-1"></div>
+                        <div class="col-4 mock-square" id="mock-2"></div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-4 mock-square" id="mock-3"></div>
+                        <div class="col-4 mock-square" id="mock-4"></div>
+                        <div class="col-4 mock-square" id="mock-5"></div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-4 mock-square" id="mock-6"></div>
+                        <div class="col-4 mock-square" id="mock-7"></div>
+                        <div class="col-4 mock-square" id="mock-8"></div>
+                    </div>
+                    <div class="row justify-content-center text-center mt-2">
+                        <p>Click on a square to see more stats.</p>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md">
+                            <table class="table table-dark table-striped table-bordered table-hover text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="sortable" data-column="0">Player</th>
+                                        <th class="sortable" data-column="1">Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="moreStats">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark text-light border-0">
+                <!-- Modal Header -->
+                <div class="modal-header justify-content-center border-0">
+                    <h4 class="modal-title">Share Results</h4>
+                    <button type="button" class="btn-close btn-close-white position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <h2 id="resultsEmojis"></h2>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="copyResultsBtn">Copy Results <i class="fa-solid fa-copy"></i></button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="Xshare">Share on <i class="fa-brands fa-x-twitter"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3 row">
+      <div class="col-sm-4">
+        <p style="font-weight: bold">Created by <a href="https://buymeacoffee.com/dizzzz" target="_blank">Diz</a>
+      </div>
+      <div class="col-sm-4">
+        <a class="me-2" href="https://x.com/d1zzzz_" target="_blank" style="color: inherit"><i class="fa-brands social-icon fa-x-twitter"></i></a>
+        <a class="ms-2" href="https://discord.gg/GNMUjWSmmy" target="_blank" style="color: inherit"><i class="fa-brands social-icon fa-discord"></i></a>
+      </div>
+      <div class="col-sm-4">
+        <p style="font-weight: bold"><a href="/privacy-policy">Privacy Policy</a></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/gridlock.js"></script>
+</body>
+</html>
