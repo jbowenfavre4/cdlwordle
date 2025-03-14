@@ -297,7 +297,7 @@ async function setCompleteState(state) {
     if (!state.squares.includes("")) {
         $gameOverText.text("You completed the grid!")
     } else {
-        $gameOverText.text("No more guessses remaining.")
+        $gameOverText.text("No more guesses remaining.")
     }
     $("#correctSquares").text(state.correct_guesses.length)
     new bootstrap.Modal(document.getElementById("generalStatsModal")).show()
