@@ -335,6 +335,17 @@ async function setCompleteState(state) {
                 `)
             }
             sortTableByColumn("moreStats", 0)
+            for (let player of grid.answers[i]) {
+                const alreadyInArray = results[i].nameStats.some(obj => obj.name === player)
+                if (!alreadyInArray) {
+                    $(`#moreStats`).append(`
+                        <tr>
+                            <td>${player}</td>
+                            <td>Not guessed</td>
+                        </tr>    
+                    `)
+                }
+            }
         })
     } 
 }
