@@ -13,7 +13,7 @@ const grid = require("./src/grid")
 const GridPuzzle = require("./src/models/gridModel")
 
 // generate puzzle for next day
-cron.schedule('0 7 * * *', async () => {
+cron.schedule('0 3 * * *', async () => {
   console.log("Generating puzzle")
   try {
     const newGrid = await grid(); // Get the generated puzzle data
