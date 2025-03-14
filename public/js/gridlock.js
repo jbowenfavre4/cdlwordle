@@ -1,6 +1,6 @@
 const flags = {
     "United States": "us",
-    "England": "gb",
+    "England": "gb-eng",
     "Scotland": "gb-sct",
     "Spain": "es",
     "France": "fr",
