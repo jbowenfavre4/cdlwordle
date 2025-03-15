@@ -81,6 +81,7 @@ $(document).ready(async () => {
                     break
                 case "rings":
                     if (puzzleData.cols[i].value == 0) {
+
                         puzzleData.cols[i].newLabel = `${puzzleData.cols[i].value} \u{1F48D}`;
                     } else {
                         puzzleData.cols[i].newLabel = `${puzzleData.cols[i].value}+ \u{1F48D}`;
@@ -109,10 +110,19 @@ $(document).ready(async () => {
             // rows
             switch(puzzleData.rows[i].type) {
                 case "wins":
-                    puzzleData.rows[i].newLabel = `${puzzleData.rows[i].value}+ \u{1F3C6}`;
+                    if (puzzleData.rows[i].value == 0) {
+                        puzzleData.rows[i].newLabel = `${puzzleData.rows[i].value} \u{1F3C6}`;
+                    } else {
+                        puzzleData.rows[i].newLabel = `${puzzleData.rows[i].value}+ \u{1F3C6}`;
+                    }
                     break
                 case "rings":
-                    puzzleData.rows[i].newLabel = `${puzzleData.rows[i].value}+ \u{1F48D}`;
+                    if (puzzleData.rows[i].value == 0) {
+                        
+                        puzzleData.rows[i].newLabel = `${puzzleData.rows[i].value} \u{1F48D}`;
+                    } else {
+                        puzzleData.rows[i].newLabel = `${puzzleData.rows[i].value}+ \u{1F48D}`;
+                    }
                     break
                 case "nationality":
                     const code = checkCountry(puzzleData.rows[i].value)
