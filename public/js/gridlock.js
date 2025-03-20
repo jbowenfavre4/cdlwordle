@@ -50,6 +50,8 @@ $(document).ready(async () => {
         if (!existingGrid || puzzleData._id != existingGrid._id) {
             await localStorage.setItem("GRID", JSON.stringify(puzzleData))
             await localStorage.setItem("GRID_STATE", JSON.stringify(CLEAN_STATE))
+            existingState = await JSON.parse(localStorage.getItem("GRID_STATE"));
+            
         } else {
             for (let i = 0; i < 9; i++) {
                 if (existingState.squares[i] != "") {
