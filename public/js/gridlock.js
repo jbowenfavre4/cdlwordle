@@ -47,12 +47,8 @@ $(document).ready(async () => {
             new bootstrap.Modal(document.getElementById("gridlockModal")).show()
         }
 
-        if (!existingGrid || puzzleData._id != existingGrid._id) {
-            await localStorage.setItem("GRID", JSON.stringify(puzzleData))
-            await localStorage.setItem("GRID_STATE", JSON.stringify(CLEAN_STATE))
-            existingState = await JSON.parse(localStorage.getItem("GRID_STATE"));
-            
-        } else {
+        // puzzle has not changed
+        if (existingGrid && puzzleData._id == existingGrid._id && existingGrid.date == puzzleData.date) {
             for (let i = 0; i < 9; i++) {
                 if (existingState.squares[i] != "") {
                     $(`#cell-${i}`).text(existingState.squares[i])
@@ -63,6 +59,12 @@ $(document).ready(async () => {
             if (existingState.done) {
                 setCompleteState(existingState)
             }
+            
+        // puzzle has changed
+        } else {
+            await localStorage.setItem("GRID", JSON.stringify(puzzleData))
+            await localStorage.setItem("GRID_STATE", JSON.stringify(CLEAN_STATE))
+            existingState = await JSON.parse(localStorage.getItem("GRID_STATE"))
         }
 
         if (!puzzleData) {
